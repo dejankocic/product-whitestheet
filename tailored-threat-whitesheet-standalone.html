@@ -1,0 +1,330 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tailored Threat Prevention – Product & Services Whitesheet</title>
+
+  <!-- TailwindCSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f8ff',
+              100: '#e6f2ff',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#0b318f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React & ReactDOM (UMD) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Lucide icons (UMD for <i data-lucide=\"...\"> usage) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* Print tweaks */
+    @media print {
+      .no-print { display: none !important; }
+      body { color: #000 !important; background: #fff !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-800">
+  <div id="root"></div>
+
+  <script type="text/javascript">
+    const { useState } = React;
+
+    function Badge({ children, className = "" }) {
+      return (
+        React.createElement('span', {
+          className: "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium " +
+                    "bg-blue-600 text-white " + className
+        }, children)
+      );
+    }
+
+    function Card({ children, className = "" }) {
+      return React.createElement('div', { className: "rounded-2xl bg-white shadow " + className }, children);
+    }
+
+    function ProcessCard({ icon, title, points }) {
+      return React.createElement(Card, { className: "p-6" }, [
+        React.createElement('div', { key: 'head', className: "mb-3 flex items-center gap-3" }, [
+          React.createElement('span', { key: 'iconwrap', className: "rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300" },
+            React.createElement('i', { 'data-lucide': icon, className: "w-5 h-5" })
+          ),
+          React.createElement('h3', { key: 'title', className: "text-base font-semibold text-blue-900" }, title)
+        ]),
+        React.createElement('ul', { key: 'list', className: "space-y-2 text-sm text-gray-700" },
+          points.map((p) =>
+            React.createElement('li', { key: p, className: "flex gap-2 items-start" }, [
+              React.createElement('i', { 'data-lucide': "check", className: "w-4 h-4 mt-0.5 text-green-600" }),
+              React.createElement('span', null, p)
+            ])
+          )
+        )
+      ]);
+    }
+
+    function OutcomeCard({ icon, title, desc }) {
+      return React.createElement(Card, { className: "p-6 flex items-start gap-3" }, [
+        React.createElement('span', { key: 'iconwrap', className: "rounded-lg bg-emerald-100 p-2 ring-1 ring-emerald-300" },
+          React.createElement('i', { 'data-lucide': icon, className: "w-5 h-5" })
+        ),
+        React.createElement('div', { key: 'txt' }, [
+          React.createElement('h4', { className: "text-base font-semibold text-blue-900" }, title),
+          React.createElement('p', { className: "mt-1 text-sm text-gray-700" }, desc)
+        ])
+      ]);
+    }
+
+    function Tabs({ items, value, onChange }) {
+      return React.createElement('div', null, [
+        React.createElement('div', { key: 'list', className: "inline-flex rounded-xl bg-white shadow-sm p-1" },
+          items.map((it) =>
+            React.createElement('button', {
+              key: it.value,
+              onClick: () => onChange(it.value),
+              className: "px-3 py-1.5 text-sm rounded-lg " + (value === it.value ? "bg-blue-600 text-white" : "text-gray-700 hover:bg-gray-100")
+            }, it.label)
+          )
+        ),
+        React.createElement('div', { key: 'content', className: "mt-4" },
+          items.find((it) => it.value === value)?.content || null
+        )
+      ]);
+    }
+
+    function App() {
+      const features = [
+        { icon: "radar", title: "Tailored Threat Intelligence", bullets: [
+          "Financial & industrial-grade feeds (100+ sources incl. dark web)",
+          "Noise reduction with relevance scoring",
+          "Seamless SIEM/EDR/NGFW integration"
+        ]},
+        { icon: "bot", title: "AI-Driven Prevention", bullets: [
+          "Behavioral detection & attacker profiling",
+          "Zero-day identification and auto-blocking",
+          "Crowd immunity across fleets"
+        ]},
+        { icon: "globe-lock", title: "Deception & Cyber Clones", bullets: [
+          "Ultra-realistic decoys for early-stage traps",
+          "Invisibility to reconnaissance scanners",
+          "Adversary TTP capture for intel enrichment"
+        ]},
+        { icon: "database", title: "SIEM Premium Analytics", bullets: [
+          "Long-term retention & correlation",
+          "Executive & SOC dashboards",
+          "Audit-ready reporting"
+        ]},
+        { icon: "scan", title: "24/7 Vulnerability Scanning", bullets: [
+          "ATM/payment, portals, edge systems",
+          "AI triage to cut false alarms",
+          "Exposure scoring & patch guidance"
+        ]},
+        { icon: "cloud", title: "Flexible Deployment", bullets: [
+          "On‑prem, air‑gapped, cloud & edge",
+          "Embedded/low‑resource devices",
+          "Hybrid, multi‑cloud coverage"
+        ]}
+      ];
+
+      const compliance = ["ISO 27001","NIST 800-53","MITRE ATT&CK","GDPR","NIS2","DORA","PCI DSS"];
+
+      const tiers = [
+        { name: "Essential", price: "Contact us", highlights: ["Curated threat feeds","Monthly reporting","Continuous vuln scanning"] },
+        { name: "Premium", price: "Contact us", featured: true, highlights: ["Real-time dashboards","Compliance reports","SIEM/EDR/NGFW integrations","24×7 assistance"] },
+        { name: "Elite", price: "Contact us", highlights: ["Tailored intel & cyber clones","Dedicated TAM","Advanced compliance alignment"] }
+      ];
+
+      const metrics = [
+        { label: "Guaranteed!", value: "0 False Positives" },
+        { label: "MTTD/MTTR", value: "< 15 min" },
+        { label: "Coverage", value: "Cloud • Edge • OT" },
+        { label: "Feed sources for your brand protection", value: "100+ " },
+      ];
+
+      const [tab, setTab] = useState("discover");
+
+      return (
+        React.createElement('div', { className: "relative w-full" }, [
+          // Decorative soft blobs
+          React.createElement('div', { key: 'bg', className: "pointer-events-none absolute inset-0 overflow-hidden" }, [
+            React.createElement('div', { key: 'b1', className: "absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-200/40 blur-3xl" }),
+            React.createElement('div', { key: 'b2', className: "absolute top-1/3 -right-24 h-72 w-72 rounded-full bg-indigo-200/40 blur-3xl" }),
+          ]),
+
+          // Header / Hero
+          React.createElement('section', { key: 'hero', className: "relative mx-auto max-w-6xl px-6 pb-8 pt-16" }, [
+            React.createElement('div', { key: 'wrap', className: "flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between" }, [
+              React.createElement('div', { key: 'left' }, [
+                React.createElement('div', { key: 'badges', className: "mb-3 flex flex-wrap gap-2" }, [
+                  React.createElement(Badge, { key: 'b1' }, "Tailored Intelligence"),
+                  React.createElement(Badge, { key: 'b2', className: "bg-emerald-600" }, "Autonomous Prevention"),
+                  React.createElement(Badge, { key: 'b3', className: "bg-indigo-600" }, "Compliance Ready"),
+                ]),
+                React.createElement('h1', { key: 'h', className: "text-3xl font-semibold tracking-tight sm:text-4xl text-brand-900" },
+                  "Tailored Threat Prevention & Intelligence Services"
+                ),
+                React.createElement('p', { key: 'p', className: "mt-3 max-w-3xl text-gray-700" },
+                  "Proactive defense that deceives, detects, and prevents threats before they impact your business—backed by sector‑specific intelligence and audit‑ready analytics."
+                ),
+                React.createElement('div', { key: 'cta', className: "mt-6 flex flex-wrap gap-3 no-print" }, [
+                  React.createElement('button', {
+                    key: 'dl', onClick: () => window.print(),
+                    className: "inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+                  }, [React.createElement('i', { 'data-lucide': "download", className: "w-4 h-4" }), "Download PDF"]),
+                  React.createElement('a', {
+                    key: 'demo', href: "#contact",
+                    className: "inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50"
+                  }, [React.createElement('i', { 'data-lucide': "sparkle", className: "w-4 h-4" }), "Book a Demo"]),
+                ])
+              ]),
+              React.createElement('div', { key: 'metrics', className: "mt-6 grid w-full max-w-md grid-cols-2 gap-3 md:mt-0" },
+                metrics.map((m) =>
+                  React.createElement(Card, { key: m.label, className: "p-4" }, [
+                    React.createElement('p', { className: "text-2xl font-bold text-blue-800" }, m.value),
+                    React.createElement('p', { className: "text-xs text-gray-600" }, m.label),
+                  ])
+                )
+              )
+            ])
+          ]),
+
+          // Core Pillars
+          React.createElement('section', { key: 'pillars', className: "relative mx-auto max-w-6xl px-6 pb-12" }, [
+            React.createElement('h2', { className: "mb-6 text-xl font-semibold tracking-tight text-gray-900" }, "Core Pillars of Protection"),
+            React.createElement('div', { className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3" },
+              features.map((f) =>
+                React.createElement(ProcessCard, { key: f.title, icon: f.icon, title: f.title, points: f.bullets })
+              )
+            )
+          ]),
+
+          // How it works (Tabs)
+          React.createElement('section', { key: 'how', className: "relative mx-auto max-w-6xl px-6 pb-12" }, [
+            React.createElement('h2', { className: "mb-6 text-xl font-semibold tracking-tight text-gray-900" }, "How It Works"),
+            React.createElement(Tabs, {
+              items: [
+                { value: "discover", label: "Discover", content: React.createElement(ProcessCard, { icon: "radar", title: "Discover & Tailor", points: [
+                  "Map assets, attack surface & sector context",
+                  "Ingest 100+ intel sources; prioritize by relevance",
+                  "Auto‑generate prevention policies"
+                ]})},
+                { value: "deceive", label: "Deceive", content: React.createElement(ProcessCard, { icon: "shield", title: "Deception Deployment", points: [
+                  "Spin up cyber clones across exposed segments",
+                  "Attract & study adversaries pre‑breach",
+                  "Feed TTPs into intel & controls"
+                ]})},
+                { value: "defend", label: "Defend", content: React.createElement(ProcessCard, { icon: "cpu", title: "Autonomous Defense", points: [
+                  "AI detection < 15 ms; zero‑day coverage",
+                  "Automatic blocking across NGFW/EDR/SIEM",
+                  "Fleet‑wide crowd immunity"
+                ]})},
+                { value: "demonstrate", label: "Demonstrate", content: React.createElement(ProcessCard, { icon: "chart-bar", title: "Demonstrate Compliance", points: [
+                  "ISO/NIST/GDPR/NIS2/DORA reporting",
+                  "Executive & SOC dashboards",
+                  "Full audit trails"
+                ]})},
+              ],
+              value: tab,
+              onChange: setTab
+            })
+          ]),
+
+          // Compliance
+          React.createElement('section', { key: 'compliance', className: "relative mx-auto max-w-6xl px-6 pb-12" }, [
+            React.createElement(Card, { className: "p-6 border border-emerald-200" }, [
+              React.createElement('div', { className: "flex flex-col gap-4 md:flex-row md:items-center md:justify-between" }, [
+                React.createElement('div', { className: "flex items-center gap-3" }, [
+                  React.createElement('i', { 'data-lucide': "shield", className: "w-5 h-5" }),
+                  React.createElement('h3', { className: "text-base font-semibold text-gray-900" }, "Standards & Regulations Coverage"),
+                ]),
+                React.createElement('div', { className: "flex flex-wrap gap-2 text-sm" },
+                  compliance.map((c) =>
+                    React.createElement('span', { key: c, className: "inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-emerald-700 ring-1 ring-emerald-200" }, c)
+                  )
+                )
+              ])
+            ])
+          ]),
+
+          // Service Tiers
+          React.createElement('section', { key: 'tiers', className: "relative mx-auto max-w-6xl px-6 pb-14" }, [
+            React.createElement('h2', { className: "mb-6 text-xl font-semibold tracking-tight text-gray-900" }, "Service Tiers"),
+            React.createElement('div', { className: "grid gap-4 md:grid-cols-3" },
+              [
+                ...[
+                  { name: "Essential", price: "Contact us", highlights: ["Curated threat feeds","Monthly reporting","Continuous vuln scanning"] },
+                  { name: "Premium", price: "Contact us", featured: true, highlights: ["Real-time dashboards","Compliance reports","SIEM/EDR/NGFW integrations","24×7 assistance"] },
+                  { name: "Elite", price: "Contact us", highlights: ["Tailored intel & cyber clones","Dedicated TAM","Advanced compliance alignment"] }
+                ].map((t) =>
+                  React.createElement(Card, { key: t.name, className: "p-6 " + (t.featured ? "ring-2 ring-blue-300 bg-blue-50" : "") }, [
+                    React.createElement('div', { className: "mb-3 flex items-center justify-between" }, [
+                      React.createElement('h3', { className: "text-lg font-semibold text-blue-900" }, t.name),
+                      t.featured ? React.createElement('span', { className: "rounded-full bg-blue-600 px-2 py-1 text-xs text-white" }, "Featured") : null
+                    ]),
+                    React.createElement('p', { className: "text-2xl font-bold text-gray-900" }, t.price),
+                    React.createElement('ul', { className: "mt-4 space-y-2 text-sm text-gray-700" },
+                      t.highlights.map((h) =>
+                        React.createElement('li', { key: h, className: "flex gap-2 items-start" }, [
+                          React.createElement('i', { 'data-lucide': "check", className: "w-4 h-4 mt-0.5 text-green-600" }),
+                          React.createElement('span', null, h)
+                        ])
+                      )
+                    ),
+                    React.createElement('div', { className: "mt-6" },
+                      React.createElement('a', { href: "#contact", className: "inline-flex w-full items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50" },
+                        [React.createElement('i', { 'data-lucide': "arrow-right", className: "w-4 h-4" }), "Contact Sales"]
+                      )
+                    )
+                  ])
+                )
+              ]
+            )
+          ]),
+
+          // Outcomes + Footer
+          React.createElement('section', { key: 'outcomes', className: "relative mx-auto max-w-6xl px-6 pb-20" }, [
+            React.createElement('div', { className: "grid gap-4 md:grid-cols-3" }, [
+              React.createElement(OutcomeCard, { key: 'o1', icon: "bell-ring", title: "Proactive Protection", desc: "Stop threats earlier with deception, tailored intel, and autonomous blocking." }),
+              React.createElement(OutcomeCard, { key: 'o2', icon: "bug", title: "Lower Risk & Cost", desc: "Cut incident impact through faster MTTD/MTTR and fewer false positives." }),
+              React.createElement(OutcomeCard, { key: 'o3', icon: "server", title: "Seamless Integration", desc: "Drop‑in with existing NGFW/EDR/SIEM; cloud, on‑prem, edge supported." }),
+            ]),
+            React.createElement('div', { className: "mt-8 flex items-center justify-between border-t border-gray-200 pt-6" }, [
+              React.createElement('p', { className: "text-sm text-gray-500" }, "© " + new Date().getFullYear() + " Tailored Threat Prevention – Proposal Mock‑up"),
+              React.createElement('div', { className: "hidden gap-3 md:flex no-print" }, [
+                React.createElement('button', { onClick: () => window.print(), className: "inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700" },
+                  [React.createElement('i', { 'data-lucide': "download", className: "w-4 h-4" }), "Download PDF"]
+                )
+              ])
+            ])
+          ]),
+        ])
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+
+    // Initialize Lucide icons after initial render
+    window.addEventListener('load', () => {
+      if (window.lucide && window.lucide.createIcons) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
