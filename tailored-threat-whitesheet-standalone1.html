@@ -140,31 +140,31 @@
     <section class="relative mx-auto max-w-6xl px-6 pb-12">
       <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900">How It Works</h2>
   <div class="flex flex-col lg:flex-row items-center justify-between gap-2">
-        <!-- Step 1 -->
+        <!-- Step 1 (Deception Deployment, now first, with indigo style) -->
         <div class="flex-1 rounded-2xl bg-indigo-50 p-6 flex flex-col items-center text-center shadow-sm">
-          <div class="bg-indigo-100 p-3 rounded-full mb-2"><i data-lucide="radar" class="w-6 h-6 text-indigo-600"></i></div>
-          <h3 class="font-semibold text-blue-900 mb-2">Discover & Tailor</h3>
-          <ul class="text-sm text-gray-700 space-y-1">
-            <li>Map assets, attack surface & sector context</li>
-            <li>Ingest 100+ intel sources; prioritize by relevance</li>
-            <li>Auto‑generate prevention policies</li>
-          </ul>
-        </div>
-        <!-- Arrow 1 -->
-  <div class="hidden lg:flex flex-col items-center justify-center mx-1">
-          <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M8 16h16m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-  <div class="flex lg:hidden items-center justify-center my-1">
-          <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M16 8v16m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <!-- Step 2 -->
-        <div class="flex-1 rounded-2xl bg-emerald-50 p-6 flex flex-col items-center text-center shadow-sm">
-          <div class="bg-emerald-100 p-3 rounded-full mb-2"><i data-lucide="shield" class="w-6 h-6 text-emerald-600"></i></div>
+          <div class="bg-indigo-100 p-3 rounded-full mb-2"><i data-lucide="shield" class="w-6 h-6 text-indigo-600"></i></div>
           <h3 class="font-semibold text-blue-900 mb-2">Deception Deployment</h3>
           <ul class="text-sm text-gray-700 space-y-1">
             <li>Spin up cyber clones across exposed segments</li>
             <li>Attract & study adversaries pre‑breach</li>
             <li>Feed TTPs into intel & controls</li>
+          </ul>
+        </div>
+        <!-- Arrow 1 -->
+        <div class="hidden lg:flex flex-col items-center justify-center mx-1">
+          <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M8 16h16m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="flex lg:hidden items-center justify-center my-1">
+          <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M16 8v16m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <!-- Step 2 (Discover & Tailor, now second, with emerald style) -->
+        <div class="flex-1 rounded-2xl bg-emerald-50 p-6 flex flex-col items-center text-center shadow-sm">
+          <div class="bg-emerald-100 p-3 rounded-full mb-2"><i data-lucide="radar" class="w-6 h-6 text-emerald-600"></i></div>
+          <h3 class="font-semibold text-blue-900 mb-2">Discover & Tailor</h3>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li>Map assets, attack surface & sector context</li>
+            <li>Ingest 100+ intel sources; prioritize by relevance</li>
+            <li>Auto‑generate prevention policies</li>
           </ul>
         </div>
         <!-- Arrow 2 -->
@@ -175,8 +175,8 @@
           <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M16 8v16m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <!-- Step 3 -->
-        <div class="flex-1 rounded-2xl bg-blue-50 p-6 flex flex-col items-center text-center shadow-sm">
-          <div class="bg-blue-100 p-3 rounded-full mb-2"><i data-lucide="cpu" class="w-6 h-6 text-blue-600"></i></div>
+        <div class="flex-1 rounded-2xl bg-rose-50 p-6 flex flex-col items-center text-center shadow-sm">
+          <div class="bg-rose-100 p-3 rounded-full mb-2"><i data-lucide="cpu" class="w-6 h-6 text-rose-600"></i></div>
           <h3 class="font-semibold text-blue-900 mb-2">Autonomous Defense</h3>
           <ul class="text-sm text-gray-700 space-y-1">
             <li>AI detection &lt; 15 ms; zero‑day coverage</li>
@@ -282,8 +282,8 @@
       document.getElementById('year').textContent = new Date().getFullYear();
       // Tabs logic
       const tabContent = {
-        discover: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide=\"radar\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Discover & Tailor</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Map assets, attack surface & sector context</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Ingest 100+ intel sources; prioritize by relevance</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Auto‑generate prevention policies</span></li></ul></div>`,
-        deceive: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide=\"shield\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Deception Deployment</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Spin up cyber clones across exposed segments</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Attract & study adversaries pre‑breach</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Feed TTPs into intel & controls</span></li></ul></div>`,
+  deceive: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide=\"shield\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Deception Deployment</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Spin up cyber clones across exposed segments</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Attract & study adversaries pre‑breach</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Feed TTPs into intel & controls</span></li></ul></div>`,
+  discover: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-emerald-100 p-2 ring-1 ring-emerald-300"><i data-lucide=\"radar\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Discover & Tailor</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Map assets, attack surface & sector context</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Ingest 100+ intel sources; prioritize by relevance</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Auto‑generate prevention policies</span></li></ul></div>`,
         defend: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide=\"cpu\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Autonomous Defense</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>AI detection &lt; 15 ms; zero‑day coverage</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Automatic blocking across NGFW/EDR/SIEM</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Fleet‑wide crowd immunity</span></li></ul></div>`,
         AuditReport: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide=\"chart-bar\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Audit Compliance & Report</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>ISO/NIST/GDPR/NIS2/DORA reporting</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Executive & SOC dashboards</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Full audit trails</span></li></ul></div>`
       };
