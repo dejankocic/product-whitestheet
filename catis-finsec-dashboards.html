@@ -8,6 +8,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Chart.js for charts (no build step needed) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- MapLibre GL JS CSS -->
+  <link href="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.css" rel="stylesheet" />
   <style>
     :root {
       --catis-navy: #0b1220;
@@ -58,7 +60,7 @@
   </style>
 </head>
 <body class="dark text-slate-100 min-h-screen p-6">
-  <div class="max-w-6xl mx-auto space-y-8">
+  <div class="max-w-6xl mx-auto space-y-8" id="main-panels">
     <header class="flex items-center justify-between">
       <h1 class="text-2xl font-bold text-cyan-400 flex items-center gap-2">
         <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7L3 9h7z"/></svg>
@@ -80,6 +82,7 @@
           <button id="tab-overview" class="px-4 py-2 bg-slate-800 text-slate-100">Overview</button>
           <button id="tab-attack" class="px-4 py-2 bg-slate-900/60 text-slate-300">Attack Types</button>
           <button id="tab-trends" class="px-4 py-2 bg-slate-900/60 text-slate-300">Trends</button>
+          <button id="tab-map" class="px-4 py-2 bg-slate-900/60 text-slate-300">Map</button>
         </div>
         <div class="no-print">
           <label for="period-select" class="mr-2 text-sm text-slate-400">Period:</label>
@@ -92,8 +95,9 @@
         </div>
       </div>
 
-      <!-- OVERVIEW TAB -->
-      <section id="panel-overview" class="mt-6 space-y-6">
+  <!-- OVERVIEW TAB -->
+  <section id="panel-overview" class="mt-6 space-y-6">
+
         <!-- KPIs -->
          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div class="card rounded-2xl p-6">
@@ -470,51 +474,164 @@
         </div>
       </section>
 
+
       </section>
     </div>
-  </div>
 
+<!-- MAP TAB (must be outside the main panel container to avoid being hidden) -->
+<div class="max-w-6xl mx-auto space-y-8" id="map-panel-wrap">
+  <section id="panel-map" class="mt-6 space-y-6 hidden">
+    <header class="flex items-center justify-between">
+      <h2 class="text-2xl font-bold text-cyan-400 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        Attacks Origin Map
+      </h2>
+    </header>
+    <div class="card rounded-2xl p-6 flex flex-col md:flex-row gap-8 items-center">
+      <div class="w-full md:w-2/3 flex-shrink-0">
+        <!-- MapLibre GL JS map container -->
+        <div id="attack-map" class="relative w-full rounded-lg shadow" style="max-width:600px; height:350px; margin:auto;"></div>
+      </div>
+      <div class="w-full md:w-1/3">
+        <h3 class="text-lg font-semibold mb-4 text-cyan-300">Attack Origins</h3>
+        <ul class="space-y-2 text-base">
+          <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#22d3ee"></span>China <span class="ml-auto font-bold">1519</span></li>
+          <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#8b5cf6"></span>United States <span class="ml-auto font-bold">1491</span></li>
+          <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#f59e0b"></span>Serbia <span class="ml-auto font-bold">1233</span></li>
+          <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#ef4444"></span>Germany <span class="ml-auto font-bold">840</span></li>
+          <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#10b981"></span>Czech Republic <span class="ml-auto font-bold">654</span></li>
+          <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#818cf8"></span>South Africa <span class="ml-auto font-bold">580</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <!-- MapLibre GL JS -->
+  <script src="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.js"></script>
   <script>
+    // MapLibre map for Map tab
+    function showAttackMap() {
+      if (window._attackMapLoaded) return;
+      window._attackMapLoaded = true;
+      const map = new maplibregl.Map({
+        container: 'attack-map',
+        style: 'https://demotiles.maplibre.org/style.json',
+        center: [20, 20],
+        zoom: 1.2,
+        attributionControl: false
+      });
+      // Attack origins: [lng, lat, color, label, count]
+      // Use the same color codes as the legend
+      const attacks = [
+        [104.2, 35.8, '#22d3ee', 'China', 1519],           // cyan
+        [-100, 40, '#8b5cf6', 'United States', 1491],      // violet
+        [20.5, 44, '#f59e0b', 'Serbia', 1233],             // amber
+        [10.5, 51, '#ef4444', 'Germany', 840],             // red
+        [15.5, 49.8, '#10b981', 'Czech Republic', 654],    // green
+        [24, -29, '#818cf8', 'South Africa', 580]          // indigo
+      ];
+      attacks.forEach(([lng, lat, color, label, count]) => {
+        // Marker as a colored circle
+        const el = document.createElement('div');
+        el.style.width = '22px';
+        el.style.height = '22px';
+        el.style.background = color;
+        el.style.borderRadius = '50%';
+        el.style.opacity = '0.8';
+        el.style.border = '2px solid #fff';
+        el.title = `${label}: ${count}`;
+        el.style.boxShadow = '0 0 8px ' + color;
+        new maplibregl.Marker(el).setLngLat([lng, lat]).addTo(map);
+      });
+    }
+
     // Tab logic
     const tabOverview = document.getElementById('tab-overview');
     const tabAttack = document.getElementById('tab-attack');
+    const tabTrends = document.getElementById('tab-trends');
+    const tabMap = document.getElementById('tab-map');
     const panelOverview = document.getElementById('panel-overview');
     const panelAttack = document.getElementById('panel-attack');
+  // Remove panelTrends, not needed
+    const panelMap = document.getElementById('panel-map');
     function activate(tab) {
-      if (tab === 'overview') {
+      tabOverview.classList.remove('bg-slate-800','text-slate-100','bg-slate-900/60','text-slate-300');
+      tabAttack.classList.remove('bg-slate-800','text-slate-100','bg-slate-900/60','text-slate-300');
+      tabTrends.classList.remove('bg-slate-800','text-slate-100','bg-slate-900/60','text-slate-300');
+      tabMap.classList.remove('bg-slate-800','text-slate-100','bg-slate-900/60','text-slate-300');
+      panelOverview.classList.add('hidden');
+      panelAttack.classList.add('hidden');
+      panelMap.classList.add('hidden');
+      if (tab === 'overview' || tab === 'trends') {
         tabOverview.classList.add('bg-slate-800','text-slate-100');
-        tabOverview.classList.remove('bg-slate-900/60','text-slate-300');
         tabAttack.classList.add('bg-slate-900/60','text-slate-300');
-        tabAttack.classList.remove('bg-slate-800','text-slate-100');
+        tabTrends.classList.add('bg-slate-900/60','text-slate-300');
+        tabMap.classList.add('bg-slate-900/60','text-slate-300');
         panelOverview.classList.remove('hidden');
-        panelAttack.classList.add('hidden');
-      } else {
+      } else if (tab === 'attack') {
         tabAttack.classList.add('bg-slate-800','text-slate-100');
-        tabAttack.classList.remove('bg-slate-900/60','text-slate-300');
         tabOverview.classList.add('bg-slate-900/60','text-slate-300');
-        tabOverview.classList.remove('bg-slate-800','text-slate-100');
-        panelOverview.classList.add('hidden');
+        tabTrends.classList.add('bg-slate-900/60','text-slate-300');
+        tabMap.classList.add('bg-slate-900/60','text-slate-300');
         panelAttack.classList.remove('hidden');
+      } else if (tab === 'map') {
+        tabMap.classList.add('bg-slate-800','text-slate-100');
+        tabOverview.classList.add('bg-slate-900/60','text-slate-300');
+        tabAttack.classList.add('bg-slate-900/60','text-slate-300');
+        tabTrends.classList.add('bg-slate-900/60','text-slate-300');
+        panelMap.classList.remove('hidden');
       }
     }
     tabOverview.addEventListener('click', () => activate('overview'));
     tabAttack.addEventListener('click', () => activate('attack'));
+    tabTrends.addEventListener('click', () => activate('trends'));
+    tabMap.addEventListener('click', () => {
+      activate('map');
+      setTimeout(showAttackMap, 200); // ensure DOM is visible before loading map
+    });
 
     // Data: Threat trends for clones (days of week)
     // Data: Threat trends for clones (24h, hourly)
     const labels = Array.from({length: 24}, (_, i) => `${i}:00`);
     const totalAttacks = 321132;
-    const serviceShares = [0.28, 0.22, 0.18, 0.17, 0.15];
-    // Generate random hourly percentages that sum to 100%
-    function randomPercentages(n) {
-      let arr = Array.from({length: n}, () => Math.random());
-      let sum = arr.reduce((a,b) => a+b, 0);
+    // Set service shares as requested: [Payment API, Web App, VPN, Payment Gateway, Mobile API]
+    const serviceShares = [0.22, 0.12, 0.52, 0.05, 0.07];
+    // Gaussian-like distribution for VPN gateway, random for others
+    function gaussian(x, mu, sigma) {
+      return Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));
+    }
+  // VPN gateway: sharper, higher peak at 2.5 (2:30 AM), smaller sigma for bigger peak
+  const vpnPeak = 2.5, vpnSigma = 0.5;
+  let vpnPattern = Array.from({length: 24}, (_, h) => gaussian(h, vpnPeak, vpnSigma));
+  let vpnSum = vpnPattern.reduce((a,b) => a+b, 0);
+  vpnPattern = vpnPattern.map(x => x/vpnSum); // normalize
+
+    // For other services, use random but smooth pattern
+    function randomSmoothPattern() {
+      let arr = Array.from({length: 24}, () => 0.8 + Math.random()*0.4);
+      // Smooth with moving average
+      for(let i=1; i<23; i++) arr[i] = (arr[i-1]+arr[i]+arr[i+1])/3;
+      let sum = arr.reduce((a,b)=>a+b,0);
       return arr.map(x => x/sum);
     }
-    // For each hour, generate a random percentage (summing to 100%)
-    const hourlyPercents = randomPercentages(24);
-    // For each hour, calculate total attacks for that hour
-    let hourlyTotals = hourlyPercents.map(p => Math.round(totalAttacks * p));
+
+    // Compose hourly totals so that VPN gets its share with gaussian, others fill the rest
+    let hourlyTotals = Array(24).fill(0);
+    let vpnHourly = vpnPattern.map(f => Math.round(totalAttacks * serviceShares[2] * f));
+    // For other services
+    let otherHourly = [0,1,3,4]; // indices in serviceShares
+    let otherPatterns = otherHourly.map(() => randomSmoothPattern());
+    // For each hour, sum the other services' shares
+    for(let h=0; h<24; h++) {
+      let rest = totalAttacks * (1 - serviceShares[2]);
+      let sumPat = otherPatterns.reduce((s,pat,i) => s + pat[h]*serviceShares[otherHourly[i]], 0);
+      for(let i=0; i<otherHourly.length; i++) {
+        let idx = otherHourly[i];
+        hourlyTotals[h] += Math.round(rest * (otherPatterns[i][h]*serviceShares[idx]/sumPat));
+      }
+      hourlyTotals[h] += vpnHourly[h];
+    }
     // Adjust for rounding errors
     let diff = totalAttacks - hourlyTotals.reduce((a,b)=>a+b,0);
     for(let i=0; diff!==0 && i<24; i++) { hourlyTotals[i%24] += diff>0?1:-1; diff += diff>0?-1:1; }
@@ -656,7 +773,25 @@
   </script>
   <footer class="w-full mt-0">
     <div class="max-w-6xl mx-auto">
-      <div class="flex flex-row items-center justify-between bg-slate-900 rounded-2xl shadow-lg px-8 py-5">
+  <div class="footer-bar flex flex-row items-center justify-between bg-slate-900 rounded-2xl shadow-lg px-8 py-5">
+  <style>
+    body.light .footer-bar {
+      background: #f1f5f9 !important;
+      color: #0f172a !important;
+    }
+    body.light .footer-bar span,
+    body.light .footer-bar div {
+      color: #0f172a !important;
+    }
+    body.light .footer-bar .bg-green-500\/20 {
+      background: #d1fae5 !important;
+      color: #047857 !important;
+    }
+    body.light .footer-bar .bg-amber-500\/20 {
+      background: #fef3c7 !important;
+      color: #b45309 !important;
+    }
+  </style>
         <div class="flex flex-row gap-4 items-center">
           <span class="inline-flex items-center px-4 py-1 rounded-full bg-green-500/20 text-green-400 font-bold text-base">99.98% SLA</span>
           <span class="inline-flex items-center px-4 py-1 rounded-full bg-green-500/20 text-green-400 font-bold text-base">&lt;1s MTTD</span>
