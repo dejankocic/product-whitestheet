@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>FinSec – Map</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo"><svg class="icon"><use href="assets/icons.svg#shield"></use></svg><strong>CATIS / FinSec Intelligence Dashboard</strong></div>
+      <nav class="nav">
+        <a href="overview.html">Overview</a>
+        <a href="attack-types.html">Attack Types</a>
+        <a href="trends.html">Trends</a>
+        <a href="map.html" class="active">Map</a>
+      </nav>
+    </div>
+    <main>
+      <section class="card">
+        <div class="kpi-title">Attack Origins — Google Maps</div>
+        <div class="mapwrap"><div id="mapCanvas" class="mapcanvas"></div></div>
+      </section>
+
+      <section class="card ai-box" style="margin-top:16px">
+        <div class="kpi-title kpi"><svg class="icon"><use href="assets/icons.svg#trend"></use></svg> <strong>AI Summary</strong></div>
+        <div style="font-size:14px; margin-top:8px">Interactive world map using Google Maps JavaScript API. Click markers to inspect origin hubs.</div>
+      </section>
+
+      <div class="footer">
+        <div class="badges">
+          <span class="compliance">ISO 27001 ✅</span>
+          <span class="compliance">NIS2 ✅</span>
+          <span class="compliance">GDPR ⚠️</span>
+          <span class="compliance">IEC 62443 ✅</span>
+        </div>
+        <div>Google Maps build • Requires API key</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/google-map.js" defer></script>
+  <!-- Replace YOUR_API_KEY with your key; keep callback=initFinsecMap -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlvokypI5No3E0J8lcEm0_nmeyLwvRVbA&callback=initFinsecMap" defer></script>
+</body>
+</html>

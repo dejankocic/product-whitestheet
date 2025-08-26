@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>FinSec – Trends</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <script src="assets/microcharts.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo"><svg class="icon"><use href="assets/icons.svg#shield"></use></svg><strong>CATIS / FinSec Intelligence Dashboard</strong></div>
+      <nav class="nav">
+        <a href="overview.html" class="">Overview</a>
+        <a href="attack-types.html" class="">Attack Types</a>
+        <a href="trends.html" class="active">Trends</a>
+        <a href="map.html" class="">Map</a>
+      </nav>
+    </div>
+    <main>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="kpi-title kpi"><svg class="icon"><use href="assets/icons.svg#gauge"></use></svg> Risk Index <span class="badge">0–100</span></div>
+      <div class="kpi-value" id="kpiRisk">65</div>
+      <div class="subtle" id="kpiRiskDelta" style="font-size:12px">+4 vs prev. period</div>
+      <div class="progress"><span id="riskBar"></span></div>
+    </div>
+    <div class="card">
+      <div class="kpi-title kpi"><svg class="icon"><use href="assets/icons.svg#coin"></use></svg> Cost Avoided <span class="badge">USD</span></div>
+      <div class="kpi-value good" id="kpiCost">$2.3M</div>
+      <div class="subtle" style="font-size:12px">▲ +12% vs prev. period</div>
+    </div>
+    <div class="card">
+      <div class="kpi-title kpi"><svg class="icon"><use href="assets/icons.svg#clock"></use></svg> SLA & Response <span class="badge">Ops</span></div>
+      <div class="pills">
+        <span class="pill bg-good">99.98% SLA</span>
+        <span class="pill bg-good">&lt;1s MTTD</span>
+        <span class="pill bg-warn">~2m MTTR</span>
+      </div>
+      <div class="subtle" style="font-size:12px">Automation rate <span id="kpiAuto">73%</span> • Human review <span id="kpiHuman">27%</span></div>
+    </div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card" style="grid-column: span 2">
+      <div class="kpi-title">Threat Volume Over Time</div>
+      <canvas id="chartVolume" class="chart"></canvas>
+    </div>
+    <div class="card">
+      <div class="kpi-title">Attack Type Distribution</div>
+      <canvas id="chartTypes" class="chart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="kpi-title">Risk Score Trend</div>
+      <canvas id="chartRisk" class="chart"></canvas>
+    </div>
+    <div class="card" style="grid-column: span 2">
+      <div class="kpi-title">Top Attack Origins (Δ vs previous)</div>
+      <canvas id="chartOrigins" class="chart"></canvas>
+      <div class="pills" style="font-size:12px; margin-top:8px">
+        <span class="pill">China <span id="chgCN">+12%</span></span>
+        <span class="pill">United States <span id="chgUS">+5%</span></span>
+        <span class="pill">Serbia <span id="chgRS">-7%</span></span>
+        <span class="pill">Germany <span id="chgDE">+3%</span></span>
+        <span class="pill">Czech Republic <span id="chgCZ">+1%</span></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="card ai-box">
+    <div class="kpi-title kpi"><svg class="icon"><use href="assets/icons.svg#trend"></use></svg> <strong>AI Summary (period-aware)</strong></div>
+    <div id="ai_summary_trends" style="font-size:14px; margin-top:8px">Loading…</div>
+  </section>
+
+  <div class="card">
+    <div class="kpi-title"><svg class="icon"><use href="assets/icons.svg#alert"></use></svg> Emerging Threats & Anomalies <span class="badge" id="periodLabel">Last 24 hours</span></div>
+    <ul id="anomalies" style="font-size:14px; list-style:none; padding:0; margin:8px 0"></ul>
+  </div>
+  <script src="js/trends.js" defer></script>
+
+      <div class="footer">
+        <div class="badges">
+          <span class="compliance">ISO 27001 ✅</span>
+          <span class="compliance">NIS2 ✅</span>
+          <span class="compliance">GDPR ⚠️</span>
+          <span class="compliance">IEC 62443 ✅</span>
+        </div>
+        <div>Hosted CSP v2 • No inline JS/CSS, SVG map image.</div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

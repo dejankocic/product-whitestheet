@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>FinSec – Attack Types</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <script src="assets/microcharts.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo"><svg class="icon"><use href="assets/icons.svg#shield"></use></svg><strong>CATIS / FinSec Intelligence Dashboard</strong></div>
+      <nav class="nav">
+        <a href="overview.html" class="">Overview</a>
+        <a href="attack-types.html" class="active">Attack Types</a>
+        <a href="trends.html" class="">Trends</a>
+        <a href="map.html" class="">Map</a>
+      </nav>
+    </div>
+    <main>
+
+  <section class="grid grid-3">
+    <div class="card">
+      <div class="kpi-title kpi"><svg class="icon"><use href="assets/icons.svg#shield"></use></svg> Low Priority</div>
+      <div class="kpi-value good">301,761</div>
+      <div style="font-size:12px">
+        <div class="subtle">Benign / Recon <span style="float:right">60%</span></div>
+        <div class="subtle">Automated <span style="float:right">39.8%</span></div>
+        <div class="subtle">Other <span style="float:right">0.2%</span></div>
+      </div>
+      <div class="pills" style="font-size:12px">
+        <span class="pill">Bathive Request Attempt 181,819</span>
+        <span class="pill">Trap Event 128,189</span>
+        <span class="pill">Unknown IP 553</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kpi-title kpi"><svg class="icon warn"><use href="assets/icons.svg#alert"></use></svg> Medium Priority</div>
+      <div class="kpi-value warn">19,465</div>
+      <div style="font-size:12px">
+        <div class="subtle">Botnet / Scripted <span style="float:right">79.7%</span></div>
+        <div class="subtle">Exploit <span style="float:right">11.3%</span></div>
+        <div class="subtle">Other <span style="float:right">9.0%</span></div>
+      </div>
+      <div class="pills" style="font-size:12px">
+        <span class="pill">Payload never seen 15,522</span>
+        <span class="pill">Fuzzing 2,193</span>
+        <span class="pill">Country-specific 1,750</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kpi-title kpi"><svg class="icon bad"><use href="assets/icons.svg#x"></use></svg> High Priority</div>
+      <div class="kpi-value bad">99</div>
+      <div style="font-size:12px">
+        <div class="subtle">Critical <span style="float:right">100%</span></div>
+        <div class="pill bg-bad" style="display:inline-block; margin-top:8px">Probable Human Attacker 99</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card ai-box">
+    <div class="kpi-title kpi"><svg class="icon"><use href="assets/icons.svg#trend"></use></svg> <strong>AI Summary</strong></div>
+    <div id="ai_attack_summary" style="font-size:14px; margin-top:8px">Loading…</div>
+  </section>
+  <script src="js/attack-types.js" defer></script>
+
+      <div class="footer">
+        <div class="badges">
+          <span class="compliance">ISO 27001 ✅</span>
+          <span class="compliance">NIS2 ✅</span>
+          <span class="compliance">GDPR ⚠️</span>
+          <span class="compliance">IEC 62443 ✅</span>
+        </div>
+        <div>Hosted CSP v2 • No inline JS/CSS, SVG map image.</div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

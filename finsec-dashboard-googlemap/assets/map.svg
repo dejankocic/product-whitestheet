@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
+  <defs>
+    <style>
+      .sea { fill: #0e1726; }
+      .land { fill: rgba(96,165,250,0.18); stroke: rgba(96,165,250,0.35); stroke-width: 2; }
+      .label { fill: #94a3b8; font: 12px sans-serif; }
+      .m-red { fill: #ef4444; stroke: #ffffff; stroke-width: 2; }
+      .m-orange { fill: #f59e0b; stroke: #ffffff; stroke-width: 2; }
+      .m-blue { fill: #60a5fa; stroke: #ffffff; stroke-width: 2; }
+      .m-green { fill: #22c55e; stroke: #ffffff; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect class="sea" x="0" y="0" width="1000" height="500"/>
+  <rect class="land" x="110" y="180" width="160" height="90" rx="16"/>
+  <rect class="land" x="320" y="160" width="180" height="110" rx="16"/>
+  <rect class="land" x="580" y="180" width="220" height="90" rx="16"/>
+  <rect class="land" x="470" y="320" width="120" height="70" rx="16"/>
+  <circle class="m-red" cx="780" cy="220" r="7"/><text class="label" x="790" y="215">China</text>
+  <circle class="m-orange" cx="260" cy="235" r="7"/><text class="label" x="270" y="230">United States</text>
+  <circle class="m-blue" cx="535" cy="215" r="7"/><text class="label" x="545" y="210">Serbia</text>
+  <circle class="m-green" cx="510" cy="205" r="7"/><text class="label" x="520" y="200">Germany</text>
+  <circle class="m-green" cx="520" cy="210" r="7"/><text class="label" x="530" y="205">Czech Rep.</text>
+  <circle class="m-blue" cx="540" cy="365" r="7"/><text class="label" x="550" y="360">South Africa</text>
+</svg>
