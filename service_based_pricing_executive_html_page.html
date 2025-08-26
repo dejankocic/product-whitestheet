@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Security Services – Service‑Based Pricing</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f8ff',
+              100: '#e6f2ff',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#0b318f',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     :root{
@@ -181,211 +198,227 @@
     </section>
 
     <section class="section">
-      <h2>Service Tiers</h2>
-      <div class="grid">
-        <article class="plan">
-          <span class="badge">Essential Threat Intel</span>
-          <h3>Protect 1–2 Critical Services</h3>
-          <div class="price">$15k–$30k / service / year</div>
-          <div class="muted">Subscription (annual)</div>
-          <ul>
-            <li>Sector‑specific TI (>100 sources incl. Dark Web)</li>
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">Service Tiers</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-blue-100 dark:border-slate-700 p-6 flex flex-col">
+          <span class="inline-block mb-2 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-200">Essential Threat Intel</span>
+          <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-200 mb-1">Protect 1–2 Critical Services</h3>
+          <div class="text-2xl font-bold text-blue-800 dark:text-blue-300 mb-1">$15k–$30k / service / year</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-3">Subscription (annual)</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
+            <li>Sector‑specific TI (&gt;100 sources incl. Dark Web)</li>
             <li>Automated monthly/quarterly reports</li>
             <li>Baseline vulnerability scanning & surface monitoring</li>
             <li>Standard SIEM/API integration</li>
             <li>Support: 24×7 • Next‑business‑day SLA</li>
           </ul>
-          <div class="actions" style="margin-top:12px">
-            <a class="btn primary" href="mailto:sales@example.com?subject=Essential%20Threat%20Intel">Choose Essential</a>
-            <button class="btn" onclick="toCompare()">Compare</button>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Essential%20Threat%20Intel">Choose Essential</a>
+            <button class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" onclick="toCompare()">Compare</button>
           </div>
         </article>
-
-        <article class="plan highlight">
-          <span class="badge">Advanced Threat Prevention</span>
-          <h3>Scale to 3–5+ Services</h3>
-          <div class="price">$40k–$80k / year</div>
-          <div class="muted">Per environment • scales by # of services</div>
-          <ul>
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border-2 border-emerald-300 dark:border-emerald-600 p-6 flex flex-col ring-2 ring-emerald-200 dark:ring-emerald-700">
+          <span class="inline-block mb-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-200">Advanced Threat Prevention</span>
+          <h3 class="text-lg font-semibold text-emerald-900 dark:text-emerald-200 mb-1">Scale to 3–5+ Services</h3>
+          <div class="text-2xl font-bold text-emerald-800 dark:text-emerald-300 mb-1">$40k–$80k / year</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-3">Per environment • scales by # of services</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
             <li>Real‑time AI/ML prevention & behavior analytics</li>
             <li>Extended log retention (≥ 12 months)</li>
             <li>Advanced SIEM/SOAR integration & dashboards</li>
             <li>Compliance views (ISO 27001, NIST, GDPR, NIS2)</li>
             <li>Support: 24×7 • P1 ≤ 1 hour</li>
           </ul>
-          <div class="actions" style="margin-top:12px">
-            <a class="btn primary" href="mailto:sales@example.com?subject=Advanced%20Threat%20Prevention">Choose Advanced</a>
-            <button class="btn" onclick="toCompare()">Compare</button>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2 text-white hover:bg-emerald-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Advanced%20Threat%20Prevention">Choose Advanced</a>
+            <button class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" onclick="toCompare()">Compare</button>
           </div>
         </article>
-
-        <article class="plan">
-          <span class="badge">Enterprise CATIS Defense</span>
-          <h3>Enterprise‑Wide Deception</h3>
-          <div class="price">$150k–$500k+ / year</div>
-          <div class="muted">Based on services & attack‑surface size</div>
-          <ul>
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-indigo-100 dark:border-indigo-700 p-6 flex flex-col">
+          <span class="inline-block mb-2 rounded-full bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 px-3 py-1 text-xs font-bold text-indigo-700 dark:text-indigo-200">Enterprise CATIS Defense</span>
+          <h3 class="text-lg font-semibold text-indigo-900 dark:text-indigo-200 mb-1">Enterprise‑Wide Deception</h3>
+          <div class="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mb-1">$150k–$500k+ / year</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-3">Based on services & attack‑surface size</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
             <li>Cyber Clones per selected service (DMZ, apps, APIs)</li>
             <li>Adaptive AI, tailored TI & automated prevention</li>
             <li>Collective Immunity (cross‑entity intel sharing)</li>
             <li>Technical Account Manager • Quarterly posture reviews</li>
             <li>Support: 24×7 • P1 ≤ 15 minutes</li>
           </ul>
-          <div class="actions" style="margin-top:12px">
-            <a class="btn primary" href="mailto:sales@example.com?subject=Enterprise%20CATIS%20Defense">Talk to Sales</a>
-            <button class="btn" onclick="toCompare()">Compare</button>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Enterprise%20CATIS%20Defense">Talk to Sales</a>
+            <button class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" onclick="toCompare()">Compare</button>
           </div>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <h2>Sovereign / Global Tier</h2>
-      <div class="card">
-        <p class="muted">For cross‑institution or national deployments requiring sovereign data residency and multi‑tenant coordination.</p>
-        <ul>
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">Sovereign / Global Tier</h2>
+      <div class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-indigo-100 dark:border-indigo-700 p-6">
+        <p class="text-gray-500 dark:text-gray-300 mb-3">For cross‑institution or national deployments requiring sovereign data residency and multi‑tenant coordination.</p>
+        <ul class="mb-4 list-disc list-inside text-sm text-gray-700 dark:text-gray-200 space-y-1">
           <li>Nation‑grade CATIS across agencies or banking groups</li>
           <li>Sovereign hosting options and data residency controls</li>
           <li>Centralized threat sharing with privacy‑preserving IOCs</li>
           <li>Enterprise subscription or project engagement</li>
         </ul>
-        <p class="price" style="margin:12px 0 0">$500k–$1.5M+ / year</p>
+        <p class="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mt-2">$500k–$1.5M+ / year</p>
       </div>
     </section>
 
     <section class="section">
-      <h2>Cloud / Hybrid Usage‑Based Add‑Ons</h2>
-      <table>
-        <thead>
-          <tr><th>Component</th><th>Included (Baseline)</th><th>Metered Pricing</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Compute</td>
-            <td>Starter compute pool per subscription</td>
-            <td>Per compute unit / hour (tiered discounts)</td>
-            <td>Autoscale with spend alerts & caps</td>
-          </tr>
-          <tr>
-            <td>Traffic Inspection</td>
-            <td>Up to plan threshold</td>
-            <td>$0.05–$0.08 per GB processed</td>
-            <td>Applies to DPI, sandboxing, AI analysis</td>
-          </tr>
-          <tr>
-            <td>Storage (Logs/Telemetry)</td>
-            <td>100 GB / month included (Advanced+)</td>
-            <td>$0.10 per GB / month beyond included</td>
-            <td>Retention tiers (3, 6, 12, 24+ months)</td>
-          </tr>
-          <tr>
-            <td>SIEM Export / API</td>
-            <td>Standard rate limits</td>
-            <td>High‑volume export priced per GB egress</td>
-            <td>Private links available for enterprise</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="muted" style="margin-top:8px">Usage charges apply only to cloud/hybrid deployments and scale with actual consumption.</div>
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">Cloud / Hybrid Usage‑Based Add‑Ons</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden text-sm">
+          <thead class="bg-gray-100 dark:bg-slate-800">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Component</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Included (Baseline)</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Metered Pricing</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-100 dark:divide-slate-800">
+            <tr>
+              <td class="px-4 py-3">Compute</td>
+              <td class="px-4 py-3">Starter compute pool per subscription</td>
+              <td class="px-4 py-3">Per compute unit / hour (tiered discounts)</td>
+              <td class="px-4 py-3">Autoscale with spend alerts & caps</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Traffic Inspection</td>
+              <td class="px-4 py-3">Up to plan threshold</td>
+              <td class="px-4 py-3">$0.05–$0.08 per GB processed</td>
+              <td class="px-4 py-3">Applies to DPI, sandboxing, AI analysis</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Storage (Logs/Telemetry)</td>
+              <td class="px-4 py-3">100 GB / month included (Advanced+)</td>
+              <td class="px-4 py-3">$0.10 per GB / month beyond included</td>
+              <td class="px-4 py-3">Retention tiers (3, 6, 12, 24+ months)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">SIEM Export / API</td>
+              <td class="px-4 py-3">Standard rate limits</td>
+              <td class="px-4 py-3">High‑volume export priced per GB egress</td>
+              <td class="px-4 py-3">Private links available for enterprise</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Usage charges apply only to cloud/hybrid deployments and scale with actual consumption.</div>
     </section>
 
     <section class="section">
-      <h2>OEM / MSSP & Professional Services</h2>
-      <div class="grid" style="grid-template-columns:repeat(2,1fr)">
-        <article class="plan">
-          <span class="badge">OEM / MSSP</span>
-          <h3>Embedded & White‑Label</h3>
-          <div class="price">$10k+ / year minimum or 20–40% ARPU</div>
-          <ul>
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">OEM / MSSP & Professional Services</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-blue-100 dark:border-blue-700 p-6 flex flex-col">
+          <span class="inline-block mb-2 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-200">OEM / MSSP</span>
+          <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-200 mb-1">Embedded & White‑Label</h3>
+          <div class="text-2xl font-bold text-blue-800 dark:text-blue-300 mb-1">$10k+ / year minimum or 20–40% ARPU</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
             <li>SDK & API integration • White‑label feeds</li>
             <li>Multi‑tenant management & reporting</li>
             <li>Flexible per‑service licensing or revenue share</li>
           </ul>
-          <div class="actions"><a class="btn primary" href="mailto:partners@example.com?subject=OEM%20MSSP">Partner With Us</a></div>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold" href="mailto:partners@example.com?subject=OEM%20MSSP">Partner With Us</a>
+          </div>
         </article>
-        <article class="plan">
-          <span class="badge">Professional Services</span>
-          <h3>Deploy • Integrate • Comply</h3>
-          <div class="price">$20k–$250k / project</div>
-          <ul>
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-emerald-100 dark:border-emerald-700 p-6 flex flex-col">
+          <span class="inline-block mb-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-200">Professional Services</span>
+          <h3 class="text-lg font-semibold text-emerald-900 dark:text-emerald-200 mb-1">Deploy • Integrate • Comply</h3>
+          <div class="text-2xl font-bold text-emerald-800 dark:text-emerald-300 mb-1">$20k–$250k / project</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
             <li>Architecture & rollout of Cyber Clones per service</li>
             <li>SOC/SIEM integration, playbooks, red‑teaming</li>
             <li>Compliance packs (ISO/NIST/GDPR/NIS2)</li>
           </ul>
-          <div class="actions"><a class="btn" href="mailto:services@example.com?subject=Professional%20Services">Scope a Project</a></div>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" href="mailto:services@example.com?subject=Professional%20Services">Scope a Project</a>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="section" id="compare">
-      <h2>Executive Comparison</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Tier</th><th>Scope</th><th>Included</th><th>Pricing Basis</th><th>Indicative Range</th><th>Best Fit</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Essential Threat Intel</strong></td>
-            <td>1–2 critical services</td>
-            <td>Sector TI, reports, baseline vuln scanning, standard SIEM, 24×7 NBD</td>
-            <td>Per service (annual subscription)</td>
-            <td>$15k–$30k / service / year</td>
-            <td>Regional banks, SMEs</td>
-          </tr>
-          <tr>
-            <td><strong>Advanced Threat Prevention</strong></td>
-            <td>3–5+ services</td>
-            <td>AI/ML prevention, behavior analytics, ≥12m logs, advanced SIEM/SOAR, compliance, P1 ≤ 1h</td>
-            <td>Per environment, scales by # of services</td>
-            <td>$40k–$80k / year</td>
-            <td>Mid‑tier banks, MSSPs</td>
-          </tr>
-          <tr>
-            <td><strong>Enterprise CATIS Defense</strong></td>
-            <td>Enterprise‑wide</td>
-            <td>Cyber Clones per service, adaptive AI, tailored TI, Collective Immunity, TAM, P1 ≤ 15m</td>
-            <td>Annual license by services + surface size</td>
-            <td>$150k–$500k+ / year</td>
-            <td>Large groups, central banks</td>
-          </tr>
-          <tr>
-            <td><strong>Sovereign / Global</strong></td>
-            <td>Multi‑entity / national</td>
-            <td>Sovereign hosting, cross‑entity intel, governance</td>
-            <td>Enterprise subscription or project</td>
-            <td>$500k–$1.5M+ / year</td>
-            <td>Gov/regulatory, critical infra</td>
-          </tr>
-          <tr>
-            <td><strong>OEM / MSSP</strong></td>
-            <td>Partner platforms</td>
-            <td>SDK/API, white‑label, multi‑tenant</td>
-            <td>Per service or 20–40% ARPU</td>
-            <td>$10k+ / year minimum</td>
-            <td>MSSPs, telecoms, fintech</td>
-          </tr>
-          <tr>
-            <td><strong>Professional Services</strong></td>
-            <td>Projects</td>
-            <td>Deploy, integrate, red‑team, compliance</td>
-            <td>Fixed‑scope project</td>
-            <td>$20k–$250k / project</td>
-            <td>Public sector, large rollouts</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="muted" style="margin-top:8px">All figures are indicative and subject to scoping, volume tiers, regional taxes, and partner discounts. Perpetual core licensing available on request (annual support required).</p>
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">Executive Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden text-sm">
+          <thead class="bg-gray-100 dark:bg-slate-800">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Tier</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Scope</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Included</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Pricing Basis</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Indicative Range</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Best Fit</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-100 dark:divide-slate-800">
+            <tr>
+              <td class="px-4 py-3 font-semibold">Essential Threat Intel</td>
+              <td class="px-4 py-3">1–2 critical services</td>
+              <td class="px-4 py-3">Sector TI, reports, baseline vuln scanning, standard SIEM, 24×7 NBD</td>
+              <td class="px-4 py-3">Per service (annual subscription)</td>
+              <td class="px-4 py-3">$15k–$30k / service / year</td>
+              <td class="px-4 py-3">Regional banks, SMEs</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold">Advanced Threat Prevention</td>
+              <td class="px-4 py-3">3–5+ services</td>
+              <td class="px-4 py-3">AI/ML prevention, behavior analytics, ≥12m logs, advanced SIEM/SOAR, compliance, P1 ≤ 1h</td>
+              <td class="px-4 py-3">Per environment, scales by # of services</td>
+              <td class="px-4 py-3">$40k–$80k / year</td>
+              <td class="px-4 py-3">Mid‑tier banks, MSSPs</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold">Enterprise CATIS Defense</td>
+              <td class="px-4 py-3">Enterprise‑wide</td>
+              <td class="px-4 py-3">Cyber Clones per service, adaptive AI, tailored TI, Collective Immunity, TAM, P1 ≤ 15m</td>
+              <td class="px-4 py-3">Annual license by services + surface size</td>
+              <td class="px-4 py-3">$150k–$500k+ / year</td>
+              <td class="px-4 py-3">Large groups, central banks</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold">Sovereign / Global</td>
+              <td class="px-4 py-3">Multi‑entity / national</td>
+              <td class="px-4 py-3">Sovereign hosting, cross‑entity intel, governance</td>
+              <td class="px-4 py-3">Enterprise subscription or project</td>
+              <td class="px-4 py-3">$500k–$1.5M+ / year</td>
+              <td class="px-4 py-3">Gov/regulatory, critical infra</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold">OEM / MSSP</td>
+              <td class="px-4 py-3">Partner platforms</td>
+              <td class="px-4 py-3">SDK/API, white‑label, multi‑tenant</td>
+              <td class="px-4 py-3">Per service or 20–40% ARPU</td>
+              <td class="px-4 py-3">$10k+ / year minimum</td>
+              <td class="px-4 py-3">MSSPs, telecoms, fintech</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold">Professional Services</td>
+              <td class="px-4 py-3">Projects</td>
+              <td class="px-4 py-3">Deploy, integrate, red‑team, compliance</td>
+              <td class="px-4 py-3">Fixed‑scope project</td>
+              <td class="px-4 py-3">$20k–$250k / project</td>
+              <td class="px-4 py-3">Public sector, large rollouts</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">All figures are indicative and subject to scoping, volume tiers, regional taxes, and partner discounts. Perpetual core licensing available on request (annual support required).</p>
     </section>
   </main>
 
-  <div class="cta">
-    <div class="bar container">
-      <div style="color:var(--muted)">Questions? <a href="mailto:sales@example.com">sales@example.com</a> • +1 (555) 010‑2025</div>
-      <div style="display:flex;gap:8px">
-        <button class="btn" onclick="window.print()">Download PDF</button>
-        <a class="btn primary" href="mailto:sales@example.com?subject=Service%20Pricing%20Inquiry">Request Quote</a>
+  <div class="sticky bottom-0 z-20 bg-gradient-to-t from-white/95 via-white/80 dark:from-slate-900/95 dark:via-slate-900/80 border-t border-gray-200 dark:border-slate-700 backdrop-blur">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-4">
+      <div class="text-gray-500 dark:text-gray-300 text-sm">Questions? <a href="mailto:sales@example.com" class="underline hover:text-blue-600 dark:hover:text-blue-400">sales@example.com</a> • +1 (555) 010‑2025</div>
+      <div class="flex gap-2">
+        <button class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" onclick="window.print()">Download PDF</button>
+        <a class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Service%20Pricing%20Inquiry">Request Quote</a>
       </div>
     </div>
   </div>

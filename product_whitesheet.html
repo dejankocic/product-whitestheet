@@ -4,25 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tailored Threat Prevention – Product & Services Whitesheet</title>
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              50: '#f0f8ff',
-              100: '#e6f2ff',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              900: '#0b318f',
-            }
+            brand: { 50:'#f0f8ff',100:'#e6f2ff',600:'#2563eb',700:'#1d4ed8',900:'#0b318f' }
           }
         }
       }
     }
   </script>
+  <!-- Lucide -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
   <style>
     @media print {
       .no-print { display: none !important; }
@@ -36,6 +33,7 @@
     <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-200/40 blur-3xl"></div>
     <div class="absolute top-1/3 -right-24 h-72 w-72 rounded-full bg-indigo-200/40 blur-3xl"></div>
   </div>
+
   <main class="relative w-full">
     <!-- Header / Hero -->
     <section class="relative mx-auto max-w-6xl px-6 pb-8 pt-16">
@@ -47,20 +45,18 @@
             <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-indigo-600 text-white">Compliance Ready</span>
           </div>
           <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl text-brand-900">Tailored Threat Prevention & Intelligence Services</h1>
-          <p class="mt-3 max-w-3xl text-gray-700">Proactive defense that deceives, detects, and prevents threats before they impact your business—backed by sector‑specific intelligence and audit‑ready analytics.</p>
-          <!-- <div class="mt-6 flex flex-wrap gap-3 no-print">
-            <button onclick="window.print()" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</button>
-            <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50"><i data-lucide="sparkle" class="w-4 h-4"></i>Book a Demo</a>
-          </div> -->
+          <p class="mt-3 max-w-3xl text-gray-700">Proactive defense that deceives, detects, and prevents threats before they impact your business—backed by sector-specific intelligence and audit-ready analytics.</p>
         </div>
+
         <div class="mt-6 grid w-full max-w-md grid-cols-2 gap-3 md:mt-0">
           <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">0 False Positives</p><p class="text-xs text-gray-600">Guaranteed!</p></div>
           <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">&lt; 2 min</p><p class="text-xs text-gray-600">MTTD/MTTR</p></div>
           <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">Humanless</p><p class="text-xs text-gray-600">Operation</p></div>
-          <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">Adaptive AI</p><p class="text-xs text-gray-600">Continious learning</p></div>
+          <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">Adaptive AI</p><p class="text-xs text-gray-600">Continuous learning</p></div>
         </div>
       </div>
     </section>
+
     <!-- Compliance -->
     <section class="relative mx-auto max-w-6xl px-6 pb-12">
       <div class="rounded-2xl bg-white shadow p-6 border border-emerald-200">
@@ -81,6 +77,7 @@
         </div>
       </div>
     </section>
+
     <!-- Core Pillars -->
     <section class="relative mx-auto max-w-6xl px-6 pb-12">
       <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900">Core Pillars of Protection</h2>
@@ -88,7 +85,7 @@
         <div class="rounded-2xl bg-white shadow p-6">
           <div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide="radar" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Tailored Threat Intelligence</h3></div>
           <ul class="space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Comprehensive financial and industrial feeds (plus 100+ external sources)</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Comprehensive financial and industrial feeds (100+ sources)</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>False-positive reduction to 0 with relevance scoring</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Seamless SIEM/EDR/NGFW integration</span></li>
           </ul>
@@ -96,7 +93,7 @@
         <div class="rounded-2xl bg-white shadow p-6">
           <div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide="bot" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Zero-day AI-Driven Prevention</h3></div>
           <ul class="space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Patended solution</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Patented solution</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Behavioral detection & attacker profiling</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Zero-day identification and auto-blocking</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Crowd immunity across fleets</span></li>
@@ -129,69 +126,63 @@
         <div class="rounded-2xl bg-white shadow p-6">
           <div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide="cloud" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Flexible Deployment</h3></div>
           <ul class="space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>On‑prem, air‑gapped, cloud & edge</span></li>
-            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Embedded/low‑resource devices</span></li>
-            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Hybrid, multi‑cloud coverage</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>On-prem, air-gapped, cloud & edge</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Embedded/low-resource devices</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Hybrid, multi-cloud coverage</span></li>
           </ul>
         </div>
       </div>
     </section>
-    <!-- How it works (Tabs) -->
+
+    <!-- How it works -->
     <section class="relative mx-auto max-w-6xl px-6 pb-12">
       <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900">How It Works</h2>
-  <div class="flex flex-col lg:flex-row items-center justify-between gap-2">
-        <!-- Step 1 (Deception Deployment, now first, with indigo style) -->
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-2">
         <div class="flex-1 rounded-2xl bg-indigo-50 p-6 flex flex-col items-center text-center shadow-sm">
           <div class="bg-indigo-100 p-3 rounded-full mb-2"><i data-lucide="shield" class="w-6 h-6 text-indigo-600"></i></div>
           <h3 class="font-semibold text-blue-900 mb-2">Deception Deployment</h3>
           <ul class="text-sm text-gray-700 space-y-1">
             <li>Spin up cyber clones across exposed segments</li>
-            <li>Attract & study adversaries pre‑breach</li>
+            <li>Attract & study adversaries pre-breach</li>
             <li>Feed TTPs into intel & controls</li>
           </ul>
         </div>
-        <!-- Arrow 1 -->
         <div class="hidden lg:flex flex-col items-center justify-center mx-1">
           <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M8 16h16m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="flex lg:hidden items-center justify-center my-1">
           <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M16 8v16m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <!-- Step 2 (Discover & Tailor, now second, with emerald style) -->
         <div class="flex-1 rounded-2xl bg-emerald-50 p-6 flex flex-col items-center text-center shadow-sm">
           <div class="bg-emerald-100 p-3 rounded-full mb-2"><i data-lucide="radar" class="w-6 h-6 text-emerald-600"></i></div>
           <h3 class="font-semibold text-blue-900 mb-2">Discover & Tailor</h3>
           <ul class="text-sm text-gray-700 space-y-1">
             <li>Map assets, attack surface & sector context</li>
             <li>Ingest 100+ intel sources; prioritize by relevance</li>
-            <li>Auto‑generate prevention policies</li>
+            <li>Auto-generate prevention policies</li>
           </ul>
         </div>
-        <!-- Arrow 2 -->
         <div class="hidden lg:flex flex-col items-center justify-center mx-2">
           <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M8 16h16m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="flex lg:hidden items-center justify-center my-2">
           <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M16 8v16m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <!-- Step 3 -->
         <div class="flex-1 rounded-2xl bg-rose-50 p-6 flex flex-col items-center text-center shadow-sm">
           <div class="bg-rose-100 p-3 rounded-full mb-2"><i data-lucide="cpu" class="w-6 h-6 text-rose-600"></i></div>
           <h3 class="font-semibold text-blue-900 mb-2">Autonomous Defense</h3>
           <ul class="text-sm text-gray-700 space-y-1">
-            <li>AI detection &lt; 15 ms; zero‑day coverage</li>
+            <li>AI detection &lt; 15 ms; zero-day coverage</li>
             <li>Automatic blocking across NGFW/EDR/SIEM</li>
-            <li>Fleet‑wide crowd immunity</li>
+            <li>Fleet-wide crowd immunity</li>
           </ul>
         </div>
-        <!-- Arrow 3 -->
         <div class="hidden lg:flex flex-col items-center justify-center mx-2">
           <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M8 16h16m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="flex lg:hidden items-center justify-center my-2">
           <svg width="32" height="32" fill="none" viewBox="0 0 32 32" class="w-8 h-8 text-gray-300"><path d="M16 8v16m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <!-- Step 4 -->
         <div class="flex-1 rounded-2xl bg-yellow-50 p-6 flex flex-col items-center text-center shadow-sm">
           <div class="bg-yellow-100 p-3 rounded-full mb-2"><i data-lucide="chart-bar" class="w-6 h-6 text-yellow-600"></i></div>
           <h3 class="font-semibold text-blue-900 mb-2">Audit Compliance & Report</h3>
@@ -203,50 +194,75 @@
         </div>
       </div>
     </section>
-    
-    <!-- Service Tiers -->
+
+    <!-- Subscription Tiers (smaller buttons) -->
     <section class="relative mx-auto max-w-6xl px-6 pb-14">
       <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900">Subscription Tiers</h2>
-      <div class="grid gap-4 md:grid-cols-3">
-        <div class="rounded-2xl bg-white shadow p-6">
-          <div class="mb-3 flex items-center justify-between"><h3 class="text-lg font-semibold text-blue-900">Essential</h3></div>
-          <p class="text-2xl font-bold text-gray-900">Contact us</p>
+      <div class="grid gap-4 md:grid-cols-3 items-stretch">
+
+        <!-- Essential -->
+        <div class="rounded-2xl bg-white shadow border-2 border-emerald-500 p-6 h-full flex flex-col">
+          <div class="mb-3 flex items-center justify-between"><h3 class="text-lg font-semibold text-emerald-700">Essential</h3></div>
+          <p class="text-2xl font-bold text-emerald-700">Contact us</p>
           <ul class="mt-4 space-y-2 text-sm text-gray-700">
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Curated threat feeds</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Monthly reporting</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Continuous vuln scanning</span></li>
           </ul>
-          <div class="mt-6"><a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50"><i data-lucide="arrow-right" class="w-4 h-4"></i>Contact Sales</a></div>
+          <div class="mt-auto pt-6">
+            <a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-600 bg-emerald-600 px-6 py-3 text-white hover:bg-emerald-700 font-semibold text-sm">
+              <i data-lucide="mail" class="w-5 h-5"></i>Book a Pilot
+            </a>
+          </div>
         </div>
-        <div class="rounded-2xl bg-white shadow p-6 ring-2 ring-blue-300 bg-blue-50">
-          <div class="mb-3 flex items-center justify-between"><h3 class="text-lg font-semibold text-blue-900">Premium</h3><span class="rounded-full bg-blue-600 px-2 py-1 text-xs text-white">Featured</span></div>
-          <p class="text-2xl font-bold text-gray-900">Contact us</p>
+
+        <!-- Elite (Featured) -->
+        <div class="rounded-2xl bg-white shadow-xl border-4 border-rose-700 ring-4 ring-rose-200 p-6 h-full flex flex-col relative z-10">
+          <div class="mb-3 flex items-center justify-between">
+            <h3 class="text-lg font-semibold text-rose-800">
+              Elite
+              <span class="ml-2 px-2 py-0.5 rounded-full bg-rose-700 text-white text-xs font-bold">Featured</span>
+            </h3>
+          </div>
+          <p class="text-2xl font-bold text-rose-700">Contact us</p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Tailored intel & cyber clones</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Dedicated TAM</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Advanced compliance alignment</span></li>
+          </ul>
+          <div class="mt-auto pt-6">
+            <a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-rose-700 bg-rose-700 px-6 py-3 text-white hover:bg-rose-800 font-semibold text-sm">
+              <i data-lucide="calendar" class="w-5 h-5"></i>Book a Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="rounded-2xl bg-white shadow border-2 border-purple-600 p-6 h-full flex flex-col">
+          <div class="mb-3 flex items-center justify-between"><h3 class="text-lg font-semibold text-purple-800">Premium</h3></div>
+          <p class="text-2xl font-bold text-purple-800">Contact us</p>
           <ul class="mt-4 space-y-2 text-sm text-gray-700">
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Real-time dashboards</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Compliance reports</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>SIEM/EDR/NGFW integrations</span></li>
             <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>24×7 assistance</span></li>
           </ul>
-          <div class="mt-6"><a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50"><i data-lucide="arrow-right" class="w-4 h-4"></i>Contact Sales</a></div>
+          <div class="mt-auto pt-6">
+            <a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-purple-700 bg-purple-700 px-6 py-3 text-white hover:bg-purple-800 font-semibold text-sm">
+              <i data-lucide="user" class="w-5 h-5"></i>Talk to an Expert
+            </a>
+          </div>
         </div>
-        <div class="rounded-2xl bg-white shadow p-6">
-          <div class="mb-3 flex items-center justify-between"><h3 class="text-lg font-semibold text-blue-900">Elite</h3></div>
-          <p class="text-2xl font-bold text-gray-900">Contact us</p>
-          <ul class="mt-4 space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Tailored intel & cyber clones</span></li>
-            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Dedicated TAM</span></li>
-            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Advanced compliance alignment</span></li>
-          </ul>
-          <div class="mt-6"><a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50"><i data-lucide="arrow-right" class="w-4 h-4"></i>Contact Sales</a></div>
-        </div>
+
       </div>
     </section>
+
     <!-- Outcomes + Footer -->
     <section class="relative mx-auto max-w-6xl px-6 pb-20">
       <div class="grid gap-4 md:grid-cols-3">
         <div class="rounded-2xl bg-white shadow p-6 flex items-start gap-3"><span class="rounded-lg bg-emerald-100 p-2 ring-1 ring-emerald-300"><i data-lucide="bell-ring" class="w-5 h-5"></i></span><div><h4 class="text-base font-semibold text-blue-900">Proactive Protection</h4><p class="mt-1 text-sm text-gray-700">Stop threats earlier with deception, tailored intel, and autonomous blocking.</p></div></div>
         <div class="rounded-2xl bg-white shadow p-6 flex items-start gap-3"><span class="rounded-lg bg-emerald-100 p-2 ring-1 ring-emerald-300"><i data-lucide="bug" class="w-5 h-5"></i></span><div><h4 class="text-base font-semibold text-blue-900">Lower Risk & Cost</h4><p class="mt-1 text-sm text-gray-700">Cut incident impact through faster MTTD/MTTR and fewer false positives.</p></div></div>
-        <div class="rounded-2xl bg-white shadow p-6 flex items-start gap-3"><span class="rounded-lg bg-emerald-100 p-2 ring-1 ring-emerald-300"><i data-lucide="server" class="w-5 h-5"></i></span><div><h4 class="text-base font-semibold text-blue-900">Seamless Integration</h4><p class="mt-1 text-sm text-gray-700">Drop‑in with existing NGFW/EDR/SIEM; cloud, on‑prem, edge supported.</p></div></div>
+        <div class="rounded-2xl bg-white shadow p-6 flex items-start gap-3"><span class="rounded-lg bg-emerald-100 p-2 ring-1 ring-emerald-300"><i data-lucide="server" class="w-5 h-5"></i></span><div><h4 class="text-base font-semibold text-blue-900">Seamless Integration</h4><p class="mt-1 text-sm text-gray-700">Drop-in with existing NGFW/EDR/SIEM; cloud, on-prem, edge supported.</p></div></div>
       </div>
 
       <!-- Call to Action Box -->
@@ -254,62 +270,28 @@
         <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div>
             <h3 class="text-xl font-bold tracking-tight text-emerald-900">Ready to strengthen your financial defense?</h3>
-            <p class="mt-1 text-sm text-emerald-800">Schedule a 30‑day pilot or talk to a solutions architect.</p>
+            <p class="mt-1 text-sm text-emerald-800">Schedule a 30-day pilot or talk to a solutions architect.</p>
           </div>
           <div class="flex gap-2">
-            <a href="#contact" class="rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-emerald-950 shadow hover:bg-emerald-400">
-              Book a Pilot
-            </a>
+            <a href="#contact" class="rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-emerald-950 shadow hover:bg-emerald-400">Book a Pilot</a>
           </div>
         </div>
       </div>
 
       <div class="mt-8 flex items-center justify-between border-t border-gray-200 pt-6">
-        <p class="text-sm text-gray-500">© <span id="year"></span> Tailored Threat Prevention – Proposal Mock‑up</p>
-        <div class="hidden gap-3 md:flex no-print">
-          <button onclick="window.print()" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</button>
-        </div>
+        <p class="text-sm text-gray-500">© <span id="year"></span> Tailored Threat Prevention – Proposal Mock-up</p>
       </div>
     </section>
   </main>
+
   <script>
-    // Lucide icons
+    // Init Lucide icons and set footer year
     window.addEventListener('DOMContentLoaded', function() {
       if (window.lucide && window.lucide.createIcons) {
         window.lucide.createIcons();
       }
-      // Set year
-      document.getElementById('year').textContent = new Date().getFullYear();
-      // Tabs logic
-      const tabContent = {
-  deceive: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide=\"shield\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Deception Deployment</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Spin up cyber clones across exposed segments</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Attract & study adversaries pre‑breach</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Feed TTPs into intel & controls</span></li></ul></div>`,
-  discover: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-emerald-100 p-2 ring-1 ring-emerald-300"><i data-lucide=\"radar\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Discover & Tailor</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Map assets, attack surface & sector context</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Ingest 100+ intel sources; prioritize by relevance</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Auto‑generate prevention policies</span></li></ul></div>`,
-        defend: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide=\"cpu\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Autonomous Defense</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>AI detection &lt; 15 ms; zero‑day coverage</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Automatic blocking across NGFW/EDR/SIEM</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Fleet‑wide crowd immunity</span></li></ul></div>`,
-        AuditReport: `<div class="rounded-2xl bg-white shadow p-6"><div class="mb-3 flex items-center gap-3"><span class="rounded-lg bg-indigo-100 p-2 ring-1 ring-indigo-300"><i data-lucide=\"chart-bar\" class="w-5 h-5"></i></span><h3 class="text-base font-semibold text-blue-900">Audit Compliance & Report</h3></div><ul class="space-y-2 text-sm text-gray-700"><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>ISO/NIST/GDPR/NIS2/DORA reporting</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Executive & SOC dashboards</span></li><li class="flex gap-2 items-start"><i data-lucide=\"check\" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Full audit trails</span></li></ul></div>`
-      };
-      let currentTab = 'discover';
-      function setTab(tab) {
-        currentTab = tab;
-        document.querySelectorAll('#tabs button').forEach(btn => {
-          if (btn.getAttribute('data-tab') === tab) {
-            btn.classList.add('bg-blue-600', 'text-white');
-            btn.classList.remove('text-gray-700', 'hover:bg-gray-100');
-          } else {
-            btn.classList.remove('bg-blue-600', 'text-white');
-            btn.classList.add('text-gray-700', 'hover:bg-gray-100');
-          }
-        });
-        document.getElementById('tab-content').innerHTML = tabContent[tab];
-        if (window.lucide && window.lucide.createIcons) {
-          window.lucide.createIcons();
-        }
-      }
-      document.querySelectorAll('#tabs button').forEach(btn => {
-        btn.addEventListener('click', function() {
-          setTab(this.getAttribute('data-tab'));
-        });
-      });
-      setTab(currentTab);
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
     });
   </script>
 </body>

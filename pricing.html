@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tailored Threat Prevention – Pricing & Licensing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#f0f8ff',100:'#e6f2ff',600:'#2563eb',700:'#1d4ed8',900:'#0b318f' },
+            emerald: tailwind.colors.emerald,
+            indigo: tailwind.colors.indigo
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    @media print { .no-print{display:none!important} body{color:#000!important;background:#fff!important} }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-800">
+  <!-- soft blobs -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-cyan-200/40 blur-3xl"></div>
+    <div class="absolute top-1/3 -right-24 h-72 w-72 rounded-full bg-indigo-200/40 blur-3xl"></div>
+  </div>
+  <main class="relative w-full">
+    <!-- Hero -->
+    <section class="relative mx-auto max-w-6xl px-6 pb-8 pt-16">
+      <div class="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+        <div>
+          <div class="mb-3 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-blue-600 text-white">Service-Based Pricing</span>
+            <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-emerald-600 text-white">Support Included</span>
+            <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-indigo-600 text-white">Add‑ons Available</span>
+          </div>
+          <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl text-brand-900">Pricing & Licensing – Tailored Threat Prevention</h1>
+          <p class="mt-3 max-w-3xl text-gray-700">Transparent tiers with optional add‑ons. Prices reflect the ranges for each tier (Essential, Elite, Premium) and scale by services protected and attack‑surface size.</p>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <span class="text-gray-600">Scenario:</span>
+            <div class="inline-flex rounded-xl ring-1 ring-gray-300 overflow-hidden no-print">
+              <button class="scenario-btn px-3 py-1.5 bg-white text-gray-800" data-scenario="low">Low</button>
+              <button class="scenario-btn px-3 py-1.5 bg-blue-600 text-white" data-scenario="mid">Mid</button>
+              <button class="scenario-btn px-3 py-1.5 bg-white text-gray-800" data-scenario="high">High</button>
+            </div>
+            <span class="text-gray-400">(toggle to preview ranges)</span>
+          </div>
+        </div>
+        <div class="mt-6 grid w-full max-w-md grid-cols-2 gap-3 md:mt-0">
+          <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">Annual</p><p class="text-xs text-gray-600">Subscription first</p></div>
+          <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">Per Service</p><p class="text-xs text-gray-600">Scale by coverage</p></div>
+          <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">15–25%</p><p class="text-xs text-gray-600">Support as per selected tier</p></div>
+          <div class="rounded-2xl bg-white shadow p-4"><p class="text-2xl font-bold text-blue-800">Add‑ons</p><p class="text-xs text-gray-600">MDR, Compliance, Cloud</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tier Cards -->
+    <section class="relative mx-auto max-w-6xl px-6 pb-12">
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900">Subscription Tiers</h2>
+      <div class="grid gap-4 md:grid-cols-3">
+        <!-- Essential -->
+    <div class="rounded-2xl bg-white shadow border-2 border-emerald-500 p-6 h-full flex flex-col">
+          <div class="mb-1 flex items-center justify-between"><h3 class="text-lg font-semibold text-emerald-700">Essential</h3><span class="rounded-full bg-emerald-50 px-2 py-1 text-xs text-emerald-700 ring-1 ring-emerald-200">Per Service</span></div>
+          <p class="text-sm text-gray-600">Tailored Threat Intelligence & reports for selected services.</p>
+          <p class="mt-3 text-2xl font-bold text-emerald-700"><span class="price" data-low="$10k/yr" data-mid="$15k/yr" data-high="$30k/yr">$15k/yr</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Curated sector intel (100+ sources)</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Monthly/quarterly reporting</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Baseline vuln scanning & SIEM export</span></li>
+          </ul>
+          <div class="mt-4 text-xs text-gray-600">Support: <strong>15%</strong> of license (min <strong>$5k</strong>/yr)</div>
+          <div class="mt-2 mt-auto flex items-end p-0.5"><a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-700 bg-emerald-700 px-2 py-1 text-white hover:bg-emerald-800 font-semibold text-base"><i data-lucide="arrow-right" class="w-5 h-5"></i>Contact Sales</a></div>
+        </div>
+        <!-- Elite (Featured) -->
+  <div class="rounded-2xl bg-white shadow-xl border-4 border-rose-700 ring-4 ring-rose-200 p-6 h-full flex flex-col relative z-10">
+          <div class="mb-1 flex items-center justify-between"><h3 class="text-lg font-semibold text-rose-800">Elite <span class='ml-2 px-2 py-0.5 rounded-full bg-rose-700 text-white text-xs font-bold'>Featured</span></h3></div>
+          <p class="text-sm text-gray-700">Deception & Cyber Clones with advanced prevention and dashboards.</p>
+          <p class="mt-3 text-2xl font-bold text-rose-700"><span class="price" data-low="$40k/yr" data-mid="$50k/yr" data-high="$90k/yr">$50k/yr</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Cyber Clones for early attacker detection</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>AI/ML behavior analytics & real‑time dashboards</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Extended retention & advanced SIEM/SOAR</span></li>
+          </ul>
+          <div class="mt-4 text-xs text-gray-600">Support: <strong>20%</strong> of license (min <strong>$20k</strong>/yr)</div>
+          <div class="mt-2 mt-auto flex items-end p-0.5"><a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-rose-700 bg-rose-700 px-2 py-1 text-white hover:bg-rose-800 font-semibold text-base"><i data-lucide="calendar" class="w-5 h-5"></i>Book a Demo</a></div>
+        </div>
+        <!-- Premium -->
+  <div class="rounded-2xl bg-white shadow border-2 border-purple-600 p-6 h-full flex flex-col">
+          <div class="mb-1 flex items-center justify-between"><h3 class="text-lg font-semibold text-purple-800">Premium</h3><span class="rounded-full bg-purple-50 px-2 py-1 text-xs text-purple-700 ring-1 ring-purple-200">Enterprise</span></div>
+          <p class="text-sm text-gray-700">Enterprise‑wide defense with MDR/SOC option and compliance suite.</p>
+          <p class="mt-3 text-2xl font-bold text-purple-800"><span class="price" data-low="$90k/yr" data-mid="$120k/yr" data-high="$150k/yr">$120k/yr</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Org‑wide Cyber Clones & tailored TI</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Compliance dashboards & executive reporting</span></li>
+            <li class="flex gap-2 items-start"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-green-600"></i><span>Dedicated TAM & priority SLAs</span></li>
+          </ul>
+          <div class="mt-4 text-xs text-gray-600">Support: <strong>25%</strong> of license (min <strong>$50k</strong>/yr)</div>
+          <div class="mt-2 mt-auto flex items-end p-0.5"><a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-purple-700 bg-purple-700 px-2 py-1 text-white hover:bg-purple-800 font-semibold text-base"><i data-lucide="arrow-right" class="w-5 h-5"></i>Contact Sales</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add-ons & Services -->
+    <section class="relative mx-auto max-w-6xl px-6 pb-12">
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900">Add‑Ons & Services</h2>
+      <div class="grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl bg-white shadow p-6">
+          <div class="mb-2 flex items-center gap-2"><i data-lucide="signal-high" class="w-5 h-5 text-emerald-600"></i><h3 class="font-semibold text-blue-900">MDR / SOC‑as‑a‑Service</h3></div>
+          <p class="text-sm text-gray-700">24×7 monitoring & response by expert analysts.</p>
+          <p class="mt-2 text-lg font-bold"><span class="price" data-low="$54k/yr" data-mid="$75k/yr" data-high="$108k/yr">$75k/yr</span></p>
+          <p class="mt-1 text-xs text-gray-600">Bundled in Premium on request.</p>
+        </div>
+        <div class="rounded-2xl bg-white shadow p-6">
+          <div class="mb-2 flex items-center gap-2"><i data-lucide="clipboard-check" class="w-5 h-5 text-emerald-600"></i><h3 class="font-semibold text-blue-900">Compliance Pack</h3></div>
+          <p class="text-sm text-gray-700">Audit‑ready ISO/NIST/GDPR/NIS2/DORA reports & dashboards.</p>
+          <p class="mt-2 text-lg font-bold"><span class="price" data-low="$3k/yr" data-mid="$4k/yr" data-high="$5k/yr">$4k/yr</span></p>
+          <p class="mt-1 text-xs text-gray-600">Discounts at scale.</p>
+        </div>
+        <div class="rounded-2xl bg-white shadow p-6">
+          <div class="mb-2 flex items-center gap-2"><i data-lucide="wrench" class="w-5 h-5 text-emerald-600"></i><h3 class="font-semibold text-blue-900">Professional Services</h3></div>
+          <p class="text-sm text-gray-700">Deployments, integrations, red‑teaming, training.</p>
+          <p class="mt-2 text-lg font-bold"><span class="price" data-low="$20k/eng" data-mid="$50k/eng" data-high="$250k/eng">$50k/eng</span></p>
+          <p class="mt-1 text-xs text-gray-600">Fixed‑scope or T&M available.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="relative mx-auto max-w-6xl px-6 pb-14">
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-gray-900">At‑a‑Glance Comparison</h2>
+      <div class="overflow-hidden rounded-2xl bg-white shadow ring-1 ring-gray-200">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
+            <tr>
+              <th class="px-4 py-3">Tier</th>
+              <th class="px-4 py-3">Scope</th>
+              <th class="px-4 py-3">Key Inclusions</th>
+              <th class="px-4 py-3">Support</th>
+              <th class="px-4 py-3">Price (Scenario)</th>
+              <th class="px-4 py-3">Best For</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr>
+              <td class="px-4 py-3 font-medium text-blue-900">Essential</td>
+              <td class="px-4 py-3">Per selected service (1 - 3 critical services)</td>
+              <td class="px-4 py-3">TI feeds, Standard reports, Baseline vuln scanning, Real-time SIEM, FW integration</td>
+              <td class="px-4 py-3">15% (min $5k)</td>
+              <td class="px-4 py-3"><span class="price" data-low="$10k" data-mid="$15k" data-high="$30k">$15k</span></td>
+              <td class="px-4 py-3">SMEs, regional banks</td>
+            </tr>
+            <tr class="bg-blue-50/40">
+              <td class="px-4 py-3 font-medium text-blue-900">Elite</td>
+              <td class="px-4 py-3">Multi‑service / environment</td>
+              <td class="px-4 py-3">On-prem setup, Deception, AI prevention, advanced dashboards, SIEM/SOAR</td>
+              <td class="px-4 py-3">20% (min $20k)</td>
+              <td class="px-4 py-3"><span class="price" data-low="$40k" data-mid="$50k" data-high="$90k">$50k</span></td>
+              <td class="px-4 py-3">Mid‑tier banks, MSSPs, Big enterprise</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-blue-900">Premium</td>
+              <td class="px-4 py-3">Enterprise‑wide</td>
+              <td class="px-4 py-3">Org‑wide clones, Compliance monitoring & reporting, Priority SLAs, MDR/SOC option</td>
+              <td class="px-4 py-3">25% (min $50k)</td>
+              <td class="px-4 py-3"><span class="price" data-low="$90k" data-mid="$120k" data-high="$150k">$120k</span></td>
+              <td class="px-4 py-3">Large enterprises, Regulators, Public organizations</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs text-gray-600">All figures are indicative and subject to scoping, volume tiers, regional taxes, and partner discounts. Perpetual licensing for core components available upon request (annual support required).</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative mx-auto max-w-6xl px-6 pb-20">
+      <div class="rounded-3xl bg-emerald-50/60 p-6 ring-1 ring-emerald-200/40">
+        <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+          <div>
+            <h3 class="text-xl font-bold tracking-tight text-emerald-900">Ready to tailor a plan?</h3>
+            <p class="mt-1 text-sm text-emerald-800">We’ll map your services, size your add‑ons, and finalize a quote within 48 hours.</p>
+          </div>
+          <div class="flex gap-2 no-print">
+            <a href="#contact" class="rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-emerald-950 shadow hover:bg-emerald-400">Request Quote</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex items-center justify-between border-t border-gray-200 pt-6">
+        <p class="text-sm text-gray-500">© <span id="year"></span> Tailored Threat Prevention – Pricing</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Icons
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide && window.lucide.createIcons) { window.lucide.createIcons(); }
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Scenario toggle (Low / Mid / High)
+      const buttons = document.querySelectorAll('.scenario-btn');
+      const setScenario = (val) => {
+        buttons.forEach(b => {
+          const active = b.getAttribute('data-scenario') === val;
+          b.classList.toggle('bg-blue-600', active);
+          b.classList.toggle('text-white', active);
+          b.classList.toggle('bg-white', !active);
+          b.classList.toggle('text-gray-800', !active);
+        });
+        document.querySelectorAll('.price').forEach(el => {
+          const v = el.getAttribute('data-' + val);
+          if (v) el.textContent = v;
+        });
+      };
+      buttons.forEach(b => b.addEventListener('click', () => setScenario(b.getAttribute('data-scenario'))));
+      setScenario('mid');
+    });
+  </script>
+</body>
+</html>

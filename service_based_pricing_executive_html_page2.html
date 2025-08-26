@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security Services – Service‑Based Pricing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f8ff',
+              100: '#e6f2ff',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#0b318f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="min-h-screen bg-white text-gray-900 dark:bg-slate-900 dark:text-gray-100">
+  <!-- Theme toggle and content will be rebuilt below using only Tailwind classes -->
+  <div class="flex justify-end p-4">
+    <button id="theme-toggle" class="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50 dark:bg-slate-800 dark:text-gray-100 dark:hover:bg-slate-700" aria-label="Toggle dark/light mode">🌙</button>
+  </div>
+  <main id="main-content">
+    <!-- Hero/Header Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-12 pb-8">
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-blue-600 text-white">Service-Based Pricing</span>
+        <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-emerald-600 text-white">Flexible Licensing</span>
+        <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-indigo-600 text-white">Cloud & On-Prem</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-brand-900 dark:text-brand-100 mb-4">Security Services – Service‑Based Pricing</h1>
+      <p class="max-w-2xl text-gray-700 dark:text-gray-300 mb-6">Pricing built around <em>your services</em>, not devices. Cyber Clones are deployed per customer‑selected service (e.g., ATM network, payment gateway, mobile banking app). Pricing scales by services protected and attack‑surface size. Subscription‑first; perpetual core available on request.</p>
+      <div class="flex flex-wrap gap-3 mb-8">
+        <button onclick="window.print()" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</button>
+        <a href="mailto:sales@example.com?subject=Service%20Pricing%20Inquiry" class="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50 dark:bg-slate-800 dark:text-gray-100 dark:hover:bg-slate-700 text-sm font-semibold"><i data-lucide="mail" class="w-4 h-4"></i>Request Quote</a>
+      </div>
+    <!-- Main Pricing Tiers Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-8 pb-12">
+      <h2 class="mb-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Service Tiers</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Essential -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-blue-100 dark:border-slate-700 p-6 flex flex-col">
+          <span class="inline-block mb-2 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-200">Essential</span>
+          <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-200 mb-1">Threat Intelligence (per service)</h3>
+          <div class="text-2xl font-bold text-blue-800 dark:text-blue-300 mb-1">$10k–$40k / service / year</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-3">Annual subscription</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
+            <li>Sector‑specific TI (&gt;100 sources incl. Dark Web)</li>
+            <li>Automated monthly/quarterly reports</li>
+            <li>Baseline vuln scanning & surface monitoring</li>
+            <li>Standard SIEM/API integration</li>
+            <li>Support: 24×7 • Next‑business‑day SLA</li>
+          </ul>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Essential%20Subscription">Choose Essential</a>
+          </div>
+        </article>
+        <!-- Elite -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border-2 border-emerald-300 dark:border-emerald-600 p-6 flex flex-col ring-2 ring-emerald-200 dark:ring-emerald-700">
+          <span class="inline-block mb-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-200">Elite</span>
+          <h3 class="text-lg font-semibold text-emerald-900 dark:text-emerald-200 mb-1">Proactive Threat Prevention</h3>
+          <div class="text-2xl font-bold text-emerald-800 dark:text-emerald-300 mb-1">$40k–$90k / year</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-3">Per environment • scales by # of services</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
+            <li>Real‑time AI/ML prevention & behavior analytics</li>
+            <li>Extended log retention (≥ 12 months)</li>
+            <li>Advanced SIEM/SOAR integration & dashboards</li>
+            <li>Compliance views (ISO 27001, NIST, GDPR, NIS2)</li>
+            <li>Support: 24×7 • P1 ≤ 1 hour</li>
+          </ul>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2 text-white hover:bg-emerald-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Elite%20Subscription">Choose Elite</a>
+          </div>
+        </article>
+        <!-- Premium -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-indigo-100 dark:border-indigo-700 p-6 flex flex-col">
+          <span class="inline-block mb-2 rounded-full bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 px-3 py-1 text-xs font-bold text-indigo-700 dark:text-indigo-200">Premium</span>
+          <h3 class="text-lg font-semibold text-indigo-900 dark:text-indigo-200 mb-1">CATIS Defense (Deception & AI)</h3>
+          <div class="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mb-1">$90k–$150k+ / year</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-3">Based on services & attack‑surface size</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
+            <li>Cyber Clones per selected service (DMZ, apps, APIs)</li>
+            <li>Adaptive AI, tailored TI & automated prevention</li>
+            <li>Collective Immunity (cross‑entity intel sharing)</li>
+            <li>Technical Account Manager • Quarterly posture reviews</li>
+            <li>Support: 24×7 • P1 ≤ 15 minutes</li>
+          </ul>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Premium%20Subscription">Talk to Sales</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- Sticky Footer -->
+    <footer class="sticky bottom-0 z-20 bg-gradient-to-t from-white/95 via-white/80 dark:from-slate-900/95 dark:via-slate-900/80 border-t border-gray-200 dark:border-slate-700 backdrop-blur">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-4">
+        <div class="text-gray-500 dark:text-gray-300 text-sm">Questions? <a href="mailto:sales@example.com" class="underline hover:text-blue-600 dark:hover:text-blue-400">sales@example.com</a> • +1 (555) 010‑2025</div>
+        <div class="flex gap-2">
+          <button class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" onclick="window.print()">Download PDF</button>
+          <a class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Service%20Pricing%20Inquiry">Request Quote</a>
+        </div>
+      </div>
+    </footer>
+    <!-- ...rest of the original content... -->
+  </main>
+  <script>
+    // Theme toggle logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.lucide) lucide.createIcons();
+      const btn = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      function setMode(mode) {
+        html.classList.remove('dark');
+        if (mode === 'dark') html.classList.add('dark');
+        btn.textContent = mode === 'dark' ? '☀️' : '🌙';
+      }
+      let mode = localStorage.getItem('theme-mode') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      setMode(mode);
+      btn.addEventListener('click', function() {
+        mode = html.classList.contains('dark') ? 'light' : 'dark';
+        setMode(mode);
+        localStorage.setItem('theme-mode', mode);
+      });
+    });
+    function toCompare(){
+      const el = document.getElementById('compare');
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security Services – Service‑Based Pricing</title>
+  <script>
+    // Set dark mode class before Tailwind loads to prevent FOUC
+    (function() {
+      try {
+        var mode = localStorage.getItem('theme-mode');
+        if (!mode) {
+          mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        if (mode === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f8ff',
+              100: '#e6f2ff',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#0b318f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="min-h-screen bg-white text-gray-900 dark:bg-slate-900 dark:text-gray-100">
+  <div class="flex justify-end p-4">
+    <button id="theme-toggle" type="button" class="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50 dark:bg-slate-800 dark:text-gray-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" aria-label="Toggle dark/light mode">
+      <span id="theme-toggle-icon" class="w-5 h-5"></span>
+      <span class="sr-only">Toggle dark/light mode</span>
+    </button>
+  </div>
+  <main id="main-content">
+    <!-- ...existing code... -->
+  </main>
+  <script>
+    // Theme toggle logic: update icon and mode on toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.lucide) lucide.createIcons();
+      const btn = document.getElementById('theme-toggle');
+      const icon = document.getElementById('theme-toggle-icon');
+      function setIcon(mode) {
+        if (!icon) return;
+        icon.innerHTML = '';
+        if (mode === 'dark') {
+          icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5M12 19.5V21M4.219 4.219l1.061 1.061M17.657 17.657l1.061 1.061M3 12h1.5M19.5 12H21M4.219 19.781l1.061-1.061M17.657 6.343l1.061-1.061M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" /></svg>`;
+        } else {
+          icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0112 21.75c-5.385 0-9.75-4.365-9.75-9.75 0-4.136 2.664-7.646 6.442-9.125a.75.75 0 01.908.911A7.501 7.501 0 0019.5 12c0 1.93-.684 3.68-1.748 5.002a.75.75 0 01-1.08.09z" /></svg>`;
+        }
+      }
+      // Set icon on load
+      let mode = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      setIcon(mode);
+      if (btn) {
+        btn.addEventListener('click', function() {
+          mode = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+          if (mode === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+          setIcon(mode);
+          localStorage.setItem('theme-mode', mode);
+        });
+      }
+    });
+    function toCompare(){
+      const el = document.getElementById('compare');
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="min-h-screen bg-white text-gray-900 dark:bg-slate-900 dark:text-gray-100">
+  <!-- Theme toggle and content will be rebuilt below using only Tailwind classes -->
+  <div class="flex justify-end p-4">
+    <button id="theme-toggle" type="button" class="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50 dark:bg-slate-800 dark:text-gray-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" aria-label="Toggle dark/light mode">
+      <span id="theme-toggle-icon" class="w-5 h-5"></span>
+      <span class="sr-only">Toggle dark/light mode</span>
+    </button>
+  </div>
+  <main id="main-content">
+    <!-- Hero/Header Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-12 pb-8">
+      <div class="mb-6 flex flex-wrap gap-2">
+        <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-blue-600 text-white">Service-Based Pricing</span>
+        <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-emerald-600 text-white">Flexible Licensing</span>
+        <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-indigo-600 text-white">Cloud & On-Prem</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-brand-900 dark:text-brand-100 mb-4">Security Services – Service‑Based Pricing</h1>
+      <p class="max-w-2xl text-gray-700 dark:text-gray-300 mb-6">Pricing built around <em>your services</em>, not devices. Cyber Clones are deployed per customer‑selected service (e.g., ATM network, payment gateway, mobile banking app). Pricing scales by services protected and attack‑surface size. Subscription‑first; perpetual core available on request.</p>
+      <div class="flex flex-wrap gap-3 mb-8">
+        <button onclick="window.print()" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</button>
+        <a href="mailto:sales@example.com?subject=Service%20Pricing%20Inquiry" class="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-800 hover:bg-gray-50 dark:bg-slate-800 dark:text-gray-100 dark:hover:bg-slate-700 text-sm font-semibold"><i data-lucide="mail" class="w-4 h-4"></i>Request Quote</a>
+      </div>
+    <!-- Main Pricing Tiers Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-8 pb-12">
+      <h2 class="mb-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Service Tiers</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <script>
+          // Theme toggle logic: update icon and mode on toggle
+          document.addEventListener('DOMContentLoaded', function() {
+            if (window.lucide) lucide.createIcons();
+            const btn = document.getElementById('theme-toggle');
+            const icon = document.getElementById('theme-toggle-icon');
+            function setIcon(mode) {
+              if (!icon) return;
+              icon.innerHTML = '';
+              if (mode === 'dark') {
+                icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5M12 19.5V21M4.219 4.219l1.061 1.061M17.657 17.657l1.061 1.061M3 12h1.5M19.5 12H21M4.219 19.781l1.061-1.061M17.657 6.343l1.061-1.061M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" /></svg>`;
+              } else {
+                icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0112 21.75c-5.385 0-9.75-4.365-9.75-9.75 0-4.136 2.664-7.646 6.442-9.125a.75.75 0 01.908.911A7.501 7.501 0 0019.5 12c0 1.93-.684 3.68-1.748 5.002a.75.75 0 01-1.08.09z" /></svg>`;
+              }
+            }
+            // Set icon on load
+            let mode = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            setIcon(mode);
+            if (btn) {
+              btn.addEventListener('click', function() {
+                mode = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                if (mode === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+                setIcon(mode);
+                localStorage.setItem('theme-mode', mode);
+              });
+            }
+          });
+          function toCompare(){
+            const el = document.getElementById('compare');
+            if(el) el.scrollIntoView({behavior:'smooth'});
+          }
+        </script>
+            <li>Technical Account Manager • Quarterly posture reviews</li>
+            <li>Support: 24×7 • P1 ≤ 15 minutes</li>
+          </ul>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Premium%20Subscription">Talk to Sales</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- Sticky Footer -->
+    <footer class="sticky bottom-0 z-20 bg-gradient-to-t from-white/95 via-white/80 dark:from-slate-900/95 dark:via-slate-900/80 border-t border-gray-200 dark:border-slate-700 backdrop-blur">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-4">
+        <div class="text-gray-500 dark:text-gray-300 text-sm">Questions? <a href="mailto:sales@example.com" class="underline hover:text-blue-600 dark:hover:text-blue-400">sales@example.com</a> • +1 (555) 010‑2025</div>
+        <div class="flex gap-2">
+          <button class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" onclick="window.print()">Download PDF</button>
+          <a class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Service%20Pricing%20Inquiry">Request Quote</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Support Pricing Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-2 pb-12">
+      <h2 class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Support Pricing (annual)</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden text-sm">
+          <thead class="bg-gray-100 dark:bg-slate-800">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Tier</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Support % of License</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Minimum (USD/yr)</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-100 dark:divide-slate-800">
+            <tr>
+              <td class="px-4 py-3">Essential</td>
+              <td class="px-4 py-3">15–20%</td>
+              <td class="px-4 py-3">$3k–$5k</td>
+              <td class="px-4 py-3">Updates, ticketing, standard SLA</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Elite</td>
+              <td class="px-4 py-3">20%+</td>
+              <td class="px-4 py-3">$15k–$25k</td>
+              <td class="px-4 py-3">P1 ≤ 1h, success reviews, extended retention</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Premium</td>
+              <td class="px-4 py-3">25%+</td>
+              <td class="px-4 py-3">$25k–$50k</td>
+              <td class="px-4 py-3">TAM, posture reviews, priority engineering</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Support billed at the greater of % of license or minimum. Volume & multi‑year discounts available.</p>
+    </section>
+    <!-- OEM / MSSP & Professional Services Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-2 pb-12">
+      <h2 class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">OEM / MSSP & Professional Services</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <!-- OEM / MSSP -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-blue-100 dark:border-blue-700 p-6 flex flex-col">
+          <span class="inline-block mb-2 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-200">OEM / MSSP</span>
+          <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-200 mb-1">Embedded & White‑Label</h3>
+          <div class="text-2xl font-bold text-blue-800 dark:text-blue-300 mb-1">$10k+ / year minimum or 20–40% ARPU</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
+            <li>SDK & API integration • White‑label feeds</li>
+            <li>Multi‑tenant management & reporting</li>
+            <li>Flexible per‑service licensing or revenue share</li>
+          </ul>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold" href="mailto:partners@example.com?subject=OEM%20MSSP">Partner With Us</a>
+          </div>
+        </article>
+        <!-- Professional Services -->
+        <article class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-emerald-100 dark:border-emerald-700 p-6 flex flex-col">
+          <span class="inline-block mb-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-200">Professional Services</span>
+          <h3 class="text-lg font-semibold text-emerald-900 dark:text-emerald-200 mb-1">Deploy • Integrate • Comply</h3>
+          <div class="text-2xl font-bold text-emerald-800 dark:text-emerald-300 mb-1">$20k–$250k / project</div>
+          <ul class="flex-1 space-y-2 text-sm text-gray-700 dark:text-gray-200 mb-4 list-disc list-inside">
+            <li>Architecture & rollout of Cyber Clones per service</li>
+            <li>SOC/SIEM integration, playbooks, red‑teaming</li>
+            <li>Compliance packs (ISO/NIST/GDPR/NIS2)</li>
+          </ul>
+          <div class="mt-auto flex gap-2">
+            <a class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" href="mailto:services@example.com?subject=Professional%20Services">Scope a Project</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Executive Comparison Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-2 pb-16" id="compare">
+      <h2 class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Executive Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden text-sm">
+          <thead class="bg-gray-100 dark:bg-slate-800">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Tier</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Scope</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Included</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Pricing Basis</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Indicative Range</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Best Fit</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-100 dark:divide-slate-800">
+            <tr>
+              <td class="px-4 py-3 font-semibold">Essential</td>
+              <td class="px-4 py-3">1–2 critical services</td>
+              <td class="px-4 py-3">Sector TI, reports, baseline vuln scanning, standard SIEM, 24×7 NBD</td>
+              <td class="px-4 py-3">Per service (annual subscription)</td>
+              <td class="px-4 py-3">$10k–$40k / service / year</td>
+              <td class="px-4 py-3">SMEs, regional banks</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold">Elite</td>
+              <td class="px-4 py-3">3–5+ services</td>
+              <td class="px-4 py-3">AI/ML prevention, behavior analytics, ≥12m logs, advanced SIEM/SOAR, compliance, P1 ≤ 1h</td>
+              <td class="px-4 py-3">Per environment; scales by # of services</td>
+              <td class="px-4 py-3">$40k–$90k / year</td>
+              <td class="px-4 py-3">Mid‑tier banks, MSSPs</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold">Premium</td>
+              <td class="px-4 py-3">Enterprise‑wide</td>
+              <td class="px-4 py-3">Cyber Clones, adaptive AI, tailored TI, Collective Immunity, TAM, P1 ≤ 15m</td>
+              <td class="px-4 py-3">Annual license by services + surface size</td>
+              <td class="px-4 py-3">$90k–$150k+ / year</td>
+              <td class="px-4 py-3">Large groups, central banks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">All figures are indicative and subject to scoping, volume tiers, regional taxes, and partner discounts. Perpetual core licensing available on request (annual support required).</p>
+    </section>
+    <!-- Sovereign / Global Tier Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-2 pb-12">
+      <h2 class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Sovereign / Global Tier</h2>
+      <div class="rounded-2xl bg-white dark:bg-slate-900 shadow border border-indigo-100 dark:border-indigo-700 p-6">
+        <p class="text-gray-500 dark:text-gray-300 mb-3">For cross‑institution or national deployments requiring sovereign data residency and multi‑tenant coordination.</p>
+        <ul class="mb-4 list-disc list-inside text-sm text-gray-700 dark:text-gray-200 space-y-1">
+          <li>Nation‑grade CATIS across agencies or banking groups</li>
+          <li>Sovereign hosting options and data residency controls</li>
+          <li>Centralized threat sharing with privacy‑preserving IOCs</li>
+          <li>Enterprise subscription or project engagement</li>
+        </ul>
+        <p class="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mt-2">$500k–$1.5M+ / year</p>
+      </div>
+    </section>
+
+    <!-- Cloud / Hybrid Usage-Based Add-Ons Section -->
+    <section class="max-w-5xl mx-auto px-4 pt-2 pb-12">
+      <h2 class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Cloud / Hybrid Usage‑Based Add‑Ons</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden text-sm">
+          <thead class="bg-gray-100 dark:bg-slate-800">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Component</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Included (Baseline)</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Metered Pricing</th>
+              <th class="px-4 py-3 font-semibold text-left text-gray-700 dark:text-gray-300">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-100 dark:divide-slate-800">
+            <tr>
+              <td class="px-4 py-3">Compute</td>
+              <td class="px-4 py-3">Starter compute pool per subscription</td>
+              <td class="px-4 py-3">Per compute unit / hour (tiered discounts)</td>
+              <td class="px-4 py-3">Autoscale with spend alerts & caps</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Traffic Inspection</td>
+              <td class="px-4 py-3">Up to plan threshold</td>
+              <td class="px-4 py-3">$0.05–$0.08 per GB processed</td>
+              <td class="px-4 py-3">DPI, sandboxing, AI analysis</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Storage (Logs/Telemetry)</td>
+              <td class="px-4 py-3">100 GB / month included (Elite+)</td>
+              <td class="px-4 py-3">$0.10 per GB / month beyond included</td>
+              <td class="px-4 py-3">Retention tiers (3, 6, 12, 24+ months)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">SIEM Export / API</td>
+              <td class="px-4 py-3">Standard rate limits</td>
+              <td class="px-4 py-3">High‑volume export priced per GB egress</td>
+              <td class="px-4 py-3">Private links available for enterprise</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Sticky Footer -->
+      <footer class="sticky bottom-0 z-20 bg-gradient-to-t from-white/95 via-white/80 dark:from-slate-900/95 dark:via-slate-900/80 border-t border-gray-200 dark:border-slate-700 backdrop-blur">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-4">
+          <div class="text-gray-500 dark:text-gray-300 text-sm">Questions? <a href="mailto:sales@example.com" class="underline hover:text-blue-600 dark:hover:text-blue-400">sales@example.com</a> • +1 (555) 010‑2025</div>
+          <div class="flex gap-2">
+            <button class="inline-flex items-center rounded-xl border border-gray-300 bg-white dark:bg-slate-800 px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-slate-700 text-sm font-semibold" onclick="window.print()">Download PDF</button>
+            <a class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 text-sm font-semibold" href="mailto:sales@example.com?subject=Service%20Pricing%20Inquiry">Request Quote</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  <script>
+    // Improved theme toggle logic: works on load and toggle, respects system and localStorage
+    (function() {
+      const html = document.documentElement;
+      const modeFromStorage = localStorage.getItem('theme-mode');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      let mode = modeFromStorage || (systemPrefersDark ? 'dark' : 'light');
+      function setMode(mode) {
+        if (mode === 'dark') {
+          html.classList.add('dark');
+        } else {
+          html.classList.remove('dark');
+        }
+        // Set icon if button exists
+        const icon = document.getElementById('theme-toggle-icon');
+        if (icon) {
+          icon.innerHTML = '';
+          if (mode === 'dark') {
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5M12 19.5V21M4.219 4.219l1.061 1.061M17.657 17.657l1.061 1.061M3 12h1.5M19.5 12H21M4.219 19.781l1.061-1.061M17.657 6.343l1.061-1.061M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" /></svg>`;
+          } else {
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0112 21.75c-5.385 0-9.75-4.365-9.75-9.75 0-4.136 2.664-7.646 6.442-9.125a.75.75 0 01.908.911A7.501 7.501 0 0019.5 12c0 1.93-.684 3.68-1.748 5.002a.75.75 0 01-1.08.09z" /></svg>`;
+          }
+        }
+      }
+      // Set mode on page load
+      setMode(mode);
+      // Listen for toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.lucide) lucide.createIcons();
+        const btn = document.getElementById('theme-toggle');
+        if (btn) {
+          btn.addEventListener('click', function() {
+            mode = html.classList.contains('dark') ? 'light' : 'dark';
+            setMode(mode);
+            localStorage.setItem('theme-mode', mode);
+          });
+        }
+      });
+    })();
+    function toCompare(){
+      const el = document.getElementById('compare');
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
